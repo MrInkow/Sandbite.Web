@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://sandbite.com/sitemap.xml
