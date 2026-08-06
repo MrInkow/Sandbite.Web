@@ -8,7 +8,6 @@ Open `index.html` in a browser and it works.
 ```
 index.html            Home
 kona.html             Chapter 01 — Kona (live)
-piha.html             Chapter 02 — Piha (in development)
 404.html              Not-found page
 robots.txt            Search engine rules
 sitemap.xml           Search engine index
@@ -67,9 +66,10 @@ Search for the number you want to change.
 **The colours** — top of `assets/css/site.css`, under `:root`. Change a value
 there and it updates everywhere on every page.
 
-**A new bar** — copy `piha.html`, change the copy, and add its landscape colours
-as a new `[data-bar="..."]` block in the CSS. Each bar's mountain ridge is an SVG
-path in the `<svg class="sprite">` block near the top of each page.
+**A new bar** — copy `kona.html`, change the copy, and add its landscape colours
+as a new `[data-bar="..."]` block in the CSS if the new page needs a distinct
+chapter treatment. Each bar's mountain ridge is an SVG path in the
+`<svg class="sprite">` block near the top of each page.
 
 **Photos** — drop a new file into `assets/img/` and point the `<img src="...">`
 at it. Keep images under about 1600px wide so pages stay fast.
@@ -111,23 +111,8 @@ from the Instagram fallback to direct Stripe checkout links automatically.
 4. **Instagram is the whole mailing list.** There is no email capture and no
    list provider, as agreed. If you want one later, the "Follow the batch"
    blocks are where the form would go.
-5. **The crew photo is the AI placeholder.** `assets/img/crew-tower.jpg` is the
-   stock/AI lifeguard image from the handoff — the uniforms are Australian surf
-   lifesaving, not Ericeira. It is the weakest thing on the site. Replace it
-   with a real crew shot when you have one.
-6. **Kona's photography is thin.** The chapter page reuses home-page photos.
+5. **Kona's photography is still growing.** The chapter page reuses home-page photos.
    Kitchen and process shots would help most: coffee being brewed into the mix,
    the tray before it is cut, a bar in a hand.
-7. **Stockists are deliberately honest.** Do not add shops until they are
+6. **Stockists are deliberately honest.** Do not add shops until they are
    actually selling it.
-
-## Things I added beyond the copy you supplied
-
-- **`piha.html`** — a full chapter page for Piha, using the Piha story from your
-  brand document. The "still in the kitchen" card links to it. Delete the file
-  and change that card from `<a>` to `<div>` if you would rather it stay a
-  non-interactive card.
-- **`404.html`** — so a wrong URL still looks like Sandbite.
-- **"Made to move."** under the hero headline, from your packaging and the
-  handoff's hero spec. It was not in the copy you pasted; remove the line in
-  `index.html` if it was not meant to be there.
