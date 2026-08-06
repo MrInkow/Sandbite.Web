@@ -246,9 +246,9 @@ a { color: var(--ink); text-decoration: none; }
   z-index: 40;
   background: var(--cream);
   border-bottom: var(--rule) solid var(--ink);
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
   align-items: center;
-  justify-content: space-between;
   gap: 16px;
   padding: 14px var(--pad-x);
 }
@@ -257,6 +257,7 @@ a { color: var(--ink); text-decoration: none; }
   align-items: center;
   gap: clamp(10px, 1.4vw, 14px);
   flex: none;
+  justify-self: start;
 }
 .brand .brand__mark {
   width: clamp(42px, 4.8vw, 58px);
@@ -277,7 +278,12 @@ a { color: var(--ink); text-decoration: none; }
   }
 }
 
-.nav { display: flex; align-items: center; gap: clamp(16px, 2.2vw, 28px); }
+.nav {
+  display: flex;
+  align-items: center;
+  justify-self: center;
+  gap: clamp(16px, 2.2vw, 28px);
+}
 .nav a {
   font-size: 11.5px;
   letter-spacing: 0.16em;
@@ -288,6 +294,8 @@ a { color: var(--ink); text-decoration: none; }
 }
 .nav a:hover, .nav a[aria-current="page"] { color: var(--accent-ink); border-bottom-color: var(--accent-ink); }
 .nav .btn { display: none; } /* duplicate CTA — only surfaces inside the mobile drawer */
+
+.header__cta { justify-self: end; }
 
 .nav-toggle {
   display: none;
@@ -309,7 +317,10 @@ a { color: var(--ink); text-decoration: none; }
 .nav-toggle[aria-expanded="true"] .nav-toggle__bars i:nth-child(3) { transform: translateY(-5px) rotate(-45deg); }
 
 @media (max-width: 880px) {
-  .site-header { flex-wrap: wrap; }
+  .site-header {
+    display: flex;
+    flex-wrap: wrap;
+  }
   .nav-toggle { display: inline-flex; }
   .header__cta { display: none; }
   .nav {
