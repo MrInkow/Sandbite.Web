@@ -190,12 +190,15 @@ table { border-collapse: collapse; width: 100%; }
   font-size: clamp(150px, 26vw, 400px);
   line-height: .7;
   color: currentColor;
-  opacity: .07;
+  opacity: .14;
   pointer-events: none;
   user-select: none;
   z-index: 0;
   font-variant-numeric: tabular-nums;
 }
+
+.band--flavour .ghost-n { opacity: .18; }
+.band--blue .ghost-n, .band--ink .ghost-n { opacity: .11; }
 
 /* ---------- THE STAMP ----------
    Rotated rubber-stamp marks. They carry facts, never decoration. */
@@ -224,8 +227,8 @@ table { border-collapse: collapse; width: 100%; }
 
 /* ---------- Marquee ---------- */
 .marquee {
-  background: var(--flavour-pale);
-  color: var(--asphalt);
+  background: var(--chore);
+  color: var(--canvas);
   border-bottom: var(--rule) solid var(--asphalt);
   overflow: hidden;
   padding: 9px 0;
@@ -241,10 +244,8 @@ table { border-collapse: collapse; width: 100%; }
   padding-inline: 20px;
   white-space: nowrap;
 }
-.marquee__group span:nth-child(even) { opacity: .6; }
+.marquee__group span:nth-child(even) { color: var(--muted-blue); }
 @keyframes marq { to { transform: translateX(-50%); } }
-.marquee--blue { background: var(--chore); color: var(--canvas); }
-.marquee--blue .marquee__group span:nth-child(even) { color: var(--muted-blue); }
 
 /* ---------- Header ---------- */
 .site-header {
@@ -408,8 +409,8 @@ table { border-collapse: collapse; width: 100%; }
   display: flex; flex-wrap: wrap; align-items: baseline;
   gap: clamp(10px, 2vw, 30px);
 }
-.shout h2 { font-size: clamp(23px, 3.2vw, 42px); }
-.shout p { font-size: 15.5px; line-height: 1.45; max-width: 48ch; }
+.shout h2 { flex: 1 1 360px; font-size: clamp(23px, 3.2vw, 42px); }
+.shout p { flex: 1 1 280px; font-size: 15.5px; line-height: 1.45; max-width: 46ch; }
 
 /* ---------- Offer line ---------- */
 .offer-line {
@@ -461,7 +462,7 @@ table { border-collapse: collapse; width: 100%; }
 /* ---------- Order band: ordering loud, finding a shop quiet ---------- */
 .order-band { display: grid; grid-template-columns: 1.35fr 1fr; border: var(--rule) solid var(--asphalt); }
 .order-band__main {
-  background: var(--flavour-pale); color: var(--asphalt);
+  background: var(--canvas); color: var(--asphalt);
   padding: clamp(26px, 3.4vw, 44px) clamp(20px, 2.6vw, 36px);
   display: flex; flex-direction: column; gap: 16px; align-items: flex-start;
 }
@@ -476,8 +477,9 @@ table { border-collapse: collapse; width: 100%; }
   padding: clamp(46px, 7vw, 110px) var(--pad-x);
   border-bottom: var(--rule) solid var(--asphalt);
   position: relative;
+  overflow: hidden;
 }
-.mega__inner { max-width: 1340px; margin-inline: auto; }
+.mega__inner { max-width: 1340px; margin-inline: auto; position: relative; z-index: 1; }
 .mega p { font-size: var(--t-mega); }
 .mega p + .sub { margin-top: clamp(20px, 2.6vw, 30px); }
 .mega em { font-style: normal; color: var(--flavour-lift); }

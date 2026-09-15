@@ -18,7 +18,7 @@ Search the HTML for `class="shot"` to find them all.
 
 ```
 index.html            Home
-coffee.html           Flavour 01 — Coffee (product + buy)
+coffee.html           Flavour 01 Coffee: purchase block, then the detail
 story.html            Origin: Hawaii, Grandma Sara, KTA, Ericeira
 404.html              Not-found page
 robots.txt            Search engine rules
@@ -60,19 +60,26 @@ Everything is driven by custom properties at the top of `assets/css/site.css`.
 | Token | Value | Use |
 | --- | --- | --- |
 | `--asphalt` | `#1B1C1A` | Type, structure, dark bands |
-| `--canvas` | `#E7E0D3` | Default page ground |
-| `--chore` | `#315E6B` | Master brand accent — nav, structural bands |
-| `--flavour` | `#BD5E23` | Worksite Orange — Coffee's accent |
-| `--flavour-lift` | `#D4712F` | The same orange, legible on asphalt |
+| `--paper` | `#F1ECE3` | Default page ground |
+| `--canvas` | `#E7E0D3` | Alternate band |
+| `--chore` | `#315E6B` | Master accent: marquee, one split per page |
+| `--flavour` | `#BD5E23` | Worksite Orange, large marks and borders |
+| `--flavour-pale` | `#E08A45` | Flat panels; carries near-black type at 6.4:1 |
+| `--flavour-lift` | `#D4712F` | Orange on asphalt, 5.1:1 |
+| `--flavour-deep` | `#9A4A18` | Small text and fill buttons on light, 4.9:1 |
 
-**Adding a flavour** takes two values. Add a block next to
-`[data-flavour="coffee"]` in the CSS, set `--flavour` and `--flavour-lift`, then
-put `data-flavour="yourflavour"` on the `<html>` tag of its page. Nothing else
-changes.
+Orange has four shades because one mid-tone cannot clear 4.5:1 on both a light
+and a dark ground. Use `--flavour-deep` for anything small on light.
 
-**Type** is Roboto Condensed Bold for display and labels, Roboto for running
-text, Roboto Mono for data and batch marks. Loaded from Google Fonts for now —
-see "Still outstanding" below.
+**Adding a flavour** takes four values. Add a block next to
+`[data-flavour="coffee"]` in the CSS, set the four `--flavour*` tokens, then put
+`data-flavour="yourflavour"` on the `<html>` tag of its page. Eyebrows, muted
+copy, callouts and stamps resolve from the band they sit on, so nothing else
+needs touching.
+
+**Type** is Anton for display, Roboto Condensed for nav, buttons and labels,
+Roboto for running text, and Roboto Mono for data. Loaded from Google Fonts for
+now — see "Still outstanding" below.
 
 **Rules of the system:** no border radius, no shadows, no gradient fills. 2px
 asphalt borders carry structure, 1px warm hairlines divide the inside of
@@ -85,7 +92,7 @@ The placeholders name the shots. Priority order:
 1. **Tier B (B1–B4)** — tear, push, squeeze, bite. Four frames, tripod locked,
    identical framing and light. Without these there is no format section, and
    the format is the product's whole difference. These block the build.
-2. **Tier D (D1–D4)** — the bag of 3 on an asphalt ground under hard
+2. **Tier D (D1–D4)** — the box of 3 on an asphalt ground under hard
    directional light. Replaces the deleted pack renders.
 3. **Tier A (A1–A3)** — hands, jam, crumbs, mess. 80% of the site's imagery
    should be this.
@@ -111,7 +118,7 @@ Root directory: leave blank
 ## Checkout
 
 The site is wired for one Stripe Payment Link. Create it in Stripe for the
-**bag of 3 at €7**, collecting email, phone and shipping address, with your
+**box of 3 at €8.97**, collecting email, phone and shipping address, with your
 shipping options configured there. Then paste it in:
 
 ```js
@@ -137,7 +144,7 @@ live, the buttons switch to Stripe and the note hides itself.
 4. **The packaging prototype.** The site describes a one-tear pack that opens
    both sections. That has to exist and be manufacturable before launch, and it
    gates Tiers B and D.
-5. **Unit economics.** €7 for three is €2.33 a bar. The old €0.65/bar cost
+5. **Unit economics.** €8.97 for three is €2.99 each. The old €0.65/bar cost
    assumption was for a single-component bar; two compartments and a jam sachet
    will move it. Finish the cost sheet before this price becomes a commitment.
 6. **Legal pages.** EU distance selling needs terms, a 14-day withdrawal
