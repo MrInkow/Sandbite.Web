@@ -391,8 +391,15 @@ table { border-collapse: collapse; width: 100%; }
   display: flex; flex-wrap: wrap; align-items: baseline;
   gap: clamp(10px, 2vw, 30px);
 }
-.shout h2 { flex: 1 1 360px; font-size: clamp(23px, 3.2vw, 42px); }
-.shout p { flex: 1 1 280px; font-size: 15.5px; line-height: 1.45; max-width: 46ch; }
+.shout h2 { flex: 1 1 360px; min-width: 0; font-size: clamp(23px, 3.2vw, 42px); }
+/* size to the sentence, never shrink it: it drops to its own row rather
+   than breaking onto a second line beside the headline */
+.shout p {
+  flex: 0 0 auto;
+  max-width: 100%;
+  font-size: 15.5px;
+  line-height: 1.45;
+}
 
 /* ---------- Offer line ---------- */
 .offer-line {
