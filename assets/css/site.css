@@ -32,7 +32,7 @@
 
   --muted:         #5E564A;
   --muted-dark:    #A49B8C;
-  --muted-blue:    #B4C6CC;
+  --muted-blue:    #C8D6DB;   /* 4.8:1 on chore blue */
 
   --hair:          #C4B9A7;
   --hair-dark:     #3A3C37;
@@ -152,26 +152,6 @@ table { border-collapse: collapse; width: 100%; }
 .muted { color: var(--muted); }
 .on-dark .muted, .band--ink .muted, .site-footer .muted { color: var(--muted-dark); }
 .band--blue .muted { color: var(--muted-blue); }
-
-/* Contextual colour: a band decides what its own text does. */
-.band--blue .eyebrow, .split--blue .eyebrow,
-.band--blue .callout__tag, .split--blue .callout__tag,
-.band--blue .stamp-badge, .split--blue .stamp-badge { color: var(--muted-blue); }
-.band--flavour .eyebrow, .split--flavour .eyebrow,
-.split--flavour .offer-line i,
-.band--flavour .callout__tag, .split--flavour .callout__tag,
-.band--flavour .stamp-badge, .split--flavour .stamp-badge { color: var(--asphalt); }
-.band--ink .eyebrow, .split--ink .eyebrow,
-.band--ink .callout__tag, .split--ink .callout__tag,
-.band--ink .stamp-badge, .split--ink .stamp-badge { color: var(--flavour-lift); }
-.split--blue .muted, .band--blue .muted { color: var(--muted-blue); }
-.split--flavour .muted, .band--flavour .muted { color: #5A3212; }
-.split--ink .muted { color: var(--muted-dark); }
-.band--blue .row-item__n, .split--blue .row-item__n,
-.band--flavour .row-item__n, .split--flavour .row-item__n { color: var(--canvas); }
-.band--ink .row-item__n, .split--ink .row-item__n { color: var(--flavour-lift); }
-.band--flavour .callout, .split--flavour .callout { border-color: var(--asphalt); }
-.band--blue .callout, .split--blue .callout { border-color: var(--muted-blue); }
 
 /* ---------- Bands ---------- */
 .band { padding: var(--pad-y) var(--pad-x); border-bottom: var(--rule) solid var(--asphalt); position: relative; overflow: hidden; }
@@ -536,15 +516,11 @@ table { border-collapse: collapse; width: 100%; }
   border: 3px solid var(--flavour); padding: 17px 19px;
   display: grid; grid-template-columns: auto 1fr; gap: 16px; align-items: start;
 }
-.on-dark .callout, .band--ink .callout, .band--blue .callout { border-color: var(--flavour-lift); }
-.band--flavour .callout { border-color: var(--canvas); }
 .callout__tag {
   font-family: var(--f-ui); font-weight: 700; text-transform: uppercase;
-  letter-spacing: .09em; font-size: 12px; color: var(--flavour);
+  letter-spacing: .09em; font-size: 12px; color: var(--flavour-deep);
   border: 2px solid currentColor; padding: 4px 9px; white-space: nowrap; line-height: 1.25;
 }
-.on-dark .callout__tag, .band--ink .callout__tag, .band--blue .callout__tag { color: var(--flavour-lift); }
-.band--flavour .callout__tag { color: var(--canvas); }
 .callout p { font-size: 15px; line-height: 1.5; }
 
 /* ---------- Data table ---------- */
@@ -630,6 +606,42 @@ body.has-mobile-buy .mobile-buy-bar {
   display: flex; flex-wrap: wrap; gap: 7px 26px; justify-content: space-between;
   font-family: var(--f-mono); font-size: 10px; letter-spacing: .13em; text-transform: uppercase;
 }
+
+/* =========================================================================
+   CONTEXTUAL COLOUR — deliberately last.
+
+   A band decides what its own text does. These rules sit at the end of the
+   stylesheet on purpose: component defaults like `.on-dark .shot__id` carry
+   the same specificity, so position is what makes the band authoritative.
+   Putting a band override anywhere above here silently loses.
+   ========================================================================= */
+.band--blue .eyebrow, .split--blue .eyebrow,
+.band--blue .callout__tag, .split--blue .callout__tag,
+.band--blue .stamp-badge, .split--blue .stamp-badge { color: var(--muted-blue); }
+.band--flavour .eyebrow, .split--flavour .eyebrow,
+.split--flavour .offer-line i,
+.band--flavour .callout__tag, .split--flavour .callout__tag,
+.band--flavour .stamp-badge, .split--flavour .stamp-badge { color: var(--asphalt); }
+.band--ink .eyebrow, .split--ink .eyebrow,
+.band--ink .callout__tag, .split--ink .callout__tag,
+.band--ink .stamp-badge, .split--ink .stamp-badge { color: var(--flavour-lift); }
+.split--blue .muted, .band--blue .muted { color: var(--muted-blue); }
+.split--flavour .muted, .band--flavour .muted { color: #4A2810; }  /* 4.9:1 on flavour-pale */
+.split--ink .muted { color: var(--muted-dark); }
+.band--blue .shot__id, .split--blue .shot__id,
+.band--blue .ritual-mini__step span, .split--blue .ritual-mini__step span,
+.band--blue .ritual__copy, .split--blue .ritual__copy { color: var(--muted-blue); }
+.band--blue .row-item__n, .split--blue .row-item__n,
+.band--flavour .row-item__n, .split--flavour .row-item__n { color: var(--canvas); }
+.band--ink .row-item__n, .split--ink .row-item__n { color: var(--flavour-lift); }
+.band--ink .callout, .split--ink .callout { border-color: var(--flavour-lift); }
+.band--flavour .callout, .split--flavour .callout { border-color: var(--asphalt); }
+.band--blue .callout, .split--blue .callout { border-color: var(--muted-blue); }
+
+.band--blue .tbc, .split--blue .tbc { color: var(--canvas); border-color: var(--muted-blue); }
+.band--ink .tbc, .split--ink .tbc, .on-dark .tbc { color: var(--canvas); border-color: var(--flavour-lift); }
+.band--flavour .tbc, .split--flavour .tbc { color: var(--asphalt); border-color: var(--asphalt); }
+
 
 /* ---------- Reveal (progressive enhancement only) ---------- */
 .js-reveal [data-reveal] { opacity: 0; transform: translateY(12px); transition: opacity .45s ease, transform .45s ease; }

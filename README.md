@@ -20,6 +20,7 @@ Search the HTML for `class="shot"` to find them all.
 index.html            Home
 coffee.html           Flavour 01 Coffee: purchase block, then the detail
 story.html            Origin: Hawaii, Grandma Sara, KTA, Ericeira
+contact.html          Stockists, orders, everything else
 404.html              Not-found page
 robots.txt            Search engine rules
 sitemap.xml           Search engine index
@@ -70,6 +71,12 @@ Everything is driven by custom properties at the top of `assets/css/site.css`.
 
 Orange has four shades because one mid-tone cannot clear 4.5:1 on both a light
 and a dark ground. Use `--flavour-deep` for anything small on light.
+
+**Contextual colour is the last block in the stylesheet, on purpose.** Component
+defaults like `.on-dark .shot__id` carry the same specificity as band overrides
+like `.band--blue .shot__id`, so position decides the winner. A band override
+placed anywhere above that block silently loses — this caused invisible text on
+the blue band twice.
 
 **Colour has roles, one each.** Off-white is the ground. Black carries
 statements and the footer. Workwear blue carries the format band and one split
