@@ -1,32 +1,51 @@
 # sandbite.com
 
-The Sandbite marketing site. Plain HTML, CSS and JavaScript — no framework.
-Open `index.html` in a browser and it works.
+The Sandbite marketing site. Plain HTML, CSS and JavaScript — no framework, no
+build step. Open `index.html` in a browser and it works.
+
+## What this version is
+
+A full rebuild against **Brand Document V1**. The product is a **portable
+crumble with a squeeze-on jam**, not an energy bar. Flavour 01 is **Coffee**.
+Places inspire flavours but do not own the brand, so the island material lives
+on the story page only.
+
+Every photograph on the site is currently a **placeholder that briefs the shot
+it is waiting for** — shot ID, what it has to show, aspect ratio and lighting.
+Search the HTML for `class="shot"` to find them all.
 
 ## Files
 
 ```
 index.html            Home
-kona.html             Chapter 01 — Kona (live)
+coffee.html           Flavour 01 — Coffee (product + buy)
+story.html            Origin: Hawaii, Grandma Sara, KTA, Ericeira
 404.html              Not-found page
 robots.txt            Search engine rules
 sitemap.xml           Search engine index
 assets/
-  css/site.css        The whole design system — every colour, size and layout rule
+  css/site.css        The whole design system — every colour, size and rule
+  js/site.js          Mobile menu, checkout links, scroll reveal, nav highlight
   js/checkout-config.js
-                      Paste Stripe Payment Links here when checkout is live
-  js/site.js          Mobile menu, checkout links, scroll reveal, nav highlighting
-  favicon.svg         Browser tab icon (the landscape mark)
-  apple-touch-icon.png
-  img/                Photography and pack shots
-  video/              Short looping video assets
+                      Paste the Stripe Payment Link here when it is live
+  favicon.svg         The symbol
+  img/
+    sandbite-wordmark.svg         Wordmark, asphalt — for light backgrounds
+    sandbite-wordmark-canvas.svg  Wordmark, canvas — for dark backgrounds
+    sandbite-symbol.svg           Symbol alone
+    og-sandbite.png               Social preview card
+    waipio-valley.jpg             Hawaii — story page
+    ericeira-firefighter-sandbite.jpg
+                                  Bombeiros Ericeira — story page
+    bay-dawn.jpg, coast-sunset.jpg, crew-tower.jpg
+                                  Unused; kept for reference
 scripts/build-deploy.sh
                       Copies only public website files into dist/ for hosting
 ```
 
 ## Previewing it locally
 
-Double-clicking `index.html` works fine. To see it exactly as a visitor will:
+Double-clicking `index.html` works. To see it exactly as a visitor will:
 
 ```bash
 python3 -m http.server 8787
@@ -34,11 +53,52 @@ python3 -m http.server 8787
 
 Then open <http://localhost:8787>.
 
+## The design system
+
+Everything is driven by custom properties at the top of `assets/css/site.css`.
+
+| Token | Value | Use |
+| --- | --- | --- |
+| `--asphalt` | `#1B1C1A` | Type, structure, dark bands |
+| `--canvas` | `#E7E0D3` | Default page ground |
+| `--chore` | `#315E6B` | Master brand accent — nav, structural bands |
+| `--flavour` | `#BD5E23` | Worksite Orange — Coffee's accent |
+| `--flavour-lift` | `#D4712F` | The same orange, legible on asphalt |
+
+**Adding a flavour** takes two values. Add a block next to
+`[data-flavour="coffee"]` in the CSS, set `--flavour` and `--flavour-lift`, then
+put `data-flavour="yourflavour"` on the `<html>` tag of its page. Nothing else
+changes.
+
+**Type** is Roboto Condensed Bold for display and labels, Roboto for running
+text, Roboto Mono for data and batch marks. Loaded from Google Fonts for now —
+see "Still outstanding" below.
+
+**Rules of the system:** no border radius, no shadows, no gradient fills. 2px
+asphalt borders carry structure, 1px warm hairlines divide the inside of
+panels. It has to survive a photocopier.
+
+## Photography
+
+The placeholders name the shots. Priority order:
+
+1. **Tier B (B1–B4)** — tear, push, squeeze, bite. Four frames, tripod locked,
+   identical framing and light. Without these there is no format section, and
+   the format is the product's whole difference. These block the build.
+2. **Tier D (D1–D4)** — the bag of 3 on an asphalt ground under hard
+   directional light. Replaces the deleted pack renders.
+3. **Tier A (A1–A3)** — hands, jam, crumbs, mess. 80% of the site's imagery
+   should be this.
+4. **Tier C (C1, C4, C7)** — the break: tailgate, site at lunch, kitchen
+   mid-batch. Documentary, available light.
+
+Deliberately absent, per the brand document: beige wellness minimalism,
+AI-generated food, perfectly placed crumbs, fake vintage grain, hard hats as
+props, anything that looks untouched by a person.
+
 ## Putting it online with GitHub + Cloudflare Pages
 
-Push this folder to GitHub, then connect the repo in Cloudflare Pages.
-
-Use these Cloudflare settings:
+Push to GitHub, then connect the repo in Cloudflare Pages:
 
 ```
 Framework preset: None
@@ -48,71 +108,44 @@ Build output directory: dist
 Root directory: leave blank
 ```
 
-The build script creates a clean `dist/` folder containing only:
+## Checkout
 
-- the public HTML files
-- `robots.txt`
-- `sitemap.xml`
-- the `assets/` folder
-
-That means README, scripts, local archives and other working files do not get
-published.
-
-## Changing things
-
-**Prices, ingredients, allergens** — these are written directly into `kona.html`.
-Search for the number you want to change.
-
-**The colours** — top of `assets/css/site.css`, under `:root`. Change a value
-there and it updates everywhere on every page.
-
-**A new bar** — copy `kona.html`, change the copy, and add its landscape colours
-as a new `[data-bar="..."]` block in the CSS if the new page needs a distinct
-chapter treatment. Each bar's mountain ridge is an SVG path in the
-`<svg class="sprite">` block near the top of each page.
-
-**Photos** — drop a new file into `assets/img/` and point the `<img src="...">`
-at it. Keep images under about 1600px wide so pages stay fast.
-
-**Deploy folder** — do not edit `dist/` by hand. It is regenerated by
-`scripts/build-deploy.sh` whenever Cloudflare deploys.
-
-**Stripe Payment Links** — create two live links in Stripe: one for the Kona
-12-pack and one for Kona single bars. In Stripe, collect customer email, phone
-and shipping address, and add your shipping/pickup options there. Paste the two
-URLs into `assets/js/checkout-config.js`:
+The site is wired for one Stripe Payment Link. Create it in Stripe for the
+**bag of 3 at €7**, collecting email, phone and shipping address, with your
+shipping options configured there. Then paste it in:
 
 ```js
 window.SANDBITE_CHECKOUT = {
-  konaBox: "https://buy.stripe.com/...",
-  konaSingle: "https://buy.stripe.com/..."
+  coffeeBag3: "https://buy.stripe.com/..."
 };
 ```
 
-Once both values are live `https://` links, the site switches the Kona buttons
-from the Instagram fallback to direct Stripe checkout links automatically.
+Until that is a live `https://` link, every buy button falls back to Instagram
+and the "card checkout is not switched on yet" note stays visible. Once it is
+live, the buttons switch to Stripe and the note hides itself.
 
-## Things still outstanding
+## Still outstanding
 
-1. **Four Kona ingredients are missing.** The brand doc only documents seven of
-   the eleven: oats 20.1%, coffee 14.7%, roasted macadamia 12.6%, macadamia
-   butter 12.6%, dates 10.7%, honey 8.8%, coconut flakes 8.8%. The remaining
-   11.7% is shown on `kona.html` as a combined row for peanut butter, almonds,
-   cashews, cacao, sea salt and butter. Send the final ingredient percentages
-   and that row gets replaced.
-2. **Your printed back label and site still need one final legal pass.** The
-   site now declares peanuts, cashews, almonds, macadamia and butter as
-   allergens. Make sure the final ingredient list, pack photography and printed
-   label all agree before launch — this is an allergen declaration, so it
-   matters more than anything else on this list.
-3. **Stripe Payment Links still need to be created.** The site is wired for
-   them, but `assets/js/checkout-config.js` is intentionally blank until the
-   live links exist. Instagram remains the fallback.
-4. **Instagram is the whole mailing list.** There is no email capture and no
-   list provider, as agreed. If you want one later, the "Follow the batch"
-   blocks are where the form would go.
-5. **Kona's photography is still growing.** The chapter page reuses home-page photos.
-   Kitchen and process shots would help most: coffee being brewed into the mix,
-   the tray before it is cut, a bar in a hand.
-6. **Stockists are deliberately honest.** Do not add shops until they are
-   actually selling it.
+1. **The photography.** Everything above. Tier B blocks the most.
+2. **The recipe.** Exact percentages, the jam composition, the nutrition panel
+   and the final allergen declaration are deliberately not published. The site
+   currently says "contains nuts" and nothing more specific. Do not publish the
+   full panel until the printed label agrees with it — it is a legal
+   declaration.
+3. **Caffeine and energy claims.** Nothing is claimed yet, on purpose. Decide
+   what is defensible once the finished recipe is measured.
+4. **The packaging prototype.** The site describes a one-tear pack that opens
+   both sections. That has to exist and be manufacturable before launch, and it
+   gates Tiers B and D.
+5. **Unit economics.** €7 for three is €2.33 a bar. The old €0.65/bar cost
+   assumption was for a single-component bar; two compartments and a jam sachet
+   will move it. Finish the cost sheet before this price becomes a commitment.
+6. **Legal pages.** EU distance selling needs terms, a 14-day withdrawal
+   notice, shipping and returns, and a privacy page. None exist yet.
+7. **Self-host the fonts.** Hotlinking Google Fonts has been found to breach
+   GDPR in the EU. Subset Roboto Condensed, Roboto and Roboto Mono to WOFF2 and
+   serve them from `assets/` — also faster.
+8. **Wholesale page.** The channel plan is independents first, with a target of
+   20 stockists. There is nothing on the site for a shop owner yet.
+9. **Stockists are deliberately honest.** Vizinha, Ericeira. Do not add shops
+   until they are actually selling it.
