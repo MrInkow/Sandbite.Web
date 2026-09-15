@@ -352,7 +352,8 @@ table { border-collapse: collapse; width: 100%; }
 }
 
 /* ---------- Hero ----------
-   The photograph leads the page; the title sits beneath it. */
+   Split: what it is and how to get it on one side, the product on the
+   other, so both land in the first screen. Stacks on phones. */
 .hero {
   background: var(--paper); color: var(--asphalt);
   border-bottom: var(--rule) solid var(--asphalt);
@@ -366,6 +367,17 @@ table { border-collapse: collapse; width: 100%; }
 .hero__media > * { flex: 1; min-width: 0; }
 .hero__media .shot { border: 0; min-height: 0; }
 .hero__media img { width: 100%; height: 100%; object-fit: cover; }
+
+.hero--split { display: grid; grid-template-columns: 1.02fr .98fr; align-items: stretch; }
+.hero--split .hero__media {
+  border-bottom: 0;
+  border-left: var(--rule) solid var(--asphalt);
+  aspect-ratio: auto;
+}
+.hero--split .hero__body { justify-content: center; }
+
+/* One line, sized to fit the column it sits in */
+.hero__title--line { font-size: clamp(25px, 3.35vw, 52px); text-wrap: nowrap; }
 
 .hero__body {
   padding: clamp(30px, 4vw, 58px) var(--pad-x) clamp(36px, 4.6vw, 66px);
@@ -384,6 +396,80 @@ table { border-collapse: collapse; width: 100%; }
   text-transform: uppercase; color: var(--muted);
 }
 .hero__meta b { color: var(--flavour-deep); font-weight: 500; }
+
+/* ---------- Shout: a compact interruption, not a whole section ---------- */
+.shout {
+  background: var(--flavour-pale); color: var(--asphalt);
+  border-bottom: var(--rule) solid var(--asphalt);
+  padding: clamp(22px, 2.8vw, 36px) var(--pad-x);
+}
+.shout__inner {
+  max-width: 1340px; margin-inline: auto;
+  display: flex; flex-wrap: wrap; align-items: baseline;
+  gap: clamp(10px, 2vw, 30px);
+}
+.shout h2 { font-size: clamp(23px, 3.2vw, 42px); }
+.shout p { font-size: 15.5px; line-height: 1.45; max-width: 48ch; }
+
+/* ---------- Offer line ---------- */
+.offer-line {
+  font-family: var(--f-ui); font-weight: 700;
+  text-transform: uppercase; letter-spacing: .05em;
+  font-size: clamp(17px, 2.1vw, 24px);
+  display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: baseline;
+}
+.offer-line i { font-style: normal; color: var(--flavour-deep); }
+
+/* ---------- To-confirm marker: never let a gap ship as fact ---------- */
+.tbc {
+  display: inline-block;
+  font-family: var(--f-mono); font-size: 10.5px; font-weight: 500;
+  letter-spacing: .14em; text-transform: uppercase;
+  color: var(--flavour-deep); border: 1.5px dashed var(--flavour-deep);
+  padding: 2px 7px; vertical-align: middle;
+}
+
+/* ---------- The break: captions paired with their images ---------- */
+.break-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  border: var(--rule) solid var(--asphalt);
+}
+.break-cell { border-right: 1px solid var(--asphalt); display: flex; flex-direction: column; }
+.break-cell:last-child { border-right: 0; }
+.break-cell .shot { border: 0; border-bottom: 1px solid var(--asphalt); min-height: 210px; }
+.break-cell__cap { padding: 15px 16px 19px; display: flex; flex-direction: column; gap: 7px; }
+.break-cell__cap h3 { font-size: clamp(18px, 2vw, 23px); }
+.break-cell__cap p { font-size: 14.5px; line-height: 1.5; color: var(--muted); }
+
+/* ---------- Condensed eat-it reminder for the product page ---------- */
+.ritual-mini {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(146px, 1fr));
+  border: var(--rule) solid currentColor;
+}
+.ritual-mini__step {
+  padding: 15px 16px 18px; border-right: 1px solid currentColor;
+  display: flex; flex-direction: column; gap: 8px;
+}
+.ritual-mini__step:last-child { border-right: 0; }
+.ritual-mini__step svg { width: 30px; height: 30px; color: var(--flavour-deep); }
+.ritual-mini__step b {
+  font-family: var(--f-display); font-weight: 400;
+  text-transform: uppercase; font-size: 20px; line-height: 1.1;
+}
+.ritual-mini__step span { font-size: 13.5px; line-height: 1.45; color: var(--muted); }
+
+/* ---------- Order band: ordering loud, finding a shop quiet ---------- */
+.order-band { display: grid; grid-template-columns: 1.35fr 1fr; border: var(--rule) solid var(--asphalt); }
+.order-band__main {
+  background: var(--flavour-pale); color: var(--asphalt);
+  padding: clamp(26px, 3.4vw, 44px) clamp(20px, 2.6vw, 36px);
+  display: flex; flex-direction: column; gap: 16px; align-items: flex-start;
+}
+.order-band__side {
+  padding: clamp(26px, 3.4vw, 44px) clamp(20px, 2.6vw, 36px);
+  border-left: var(--rule) solid var(--asphalt);
+  display: flex; flex-direction: column; gap: 12px; align-items: flex-start;
+}
 
 /* ---------- Mega type statement ---------- */
 .mega {
@@ -568,6 +654,17 @@ body.has-mobile-buy .mobile-buy-bar {
 }
 
 @media (max-width: 880px) {
+  .hero--split { grid-template-columns: 1fr; }
+  .hero--split .hero__media {
+    order: -1;
+    border-left: 0;
+    border-bottom: var(--rule) solid var(--asphalt);
+    aspect-ratio: 4 / 3;
+  }
+  .hero__title--line { text-wrap: balance; }
+  .order-band { grid-template-columns: 1fr; }
+  .order-band__side { border-left: 0; border-top: var(--rule) solid var(--asphalt); }
+
   .nav-toggle { display: inline-flex; }
   .header__cta { display: none; }
   .nav {
@@ -588,9 +685,15 @@ body.has-mobile-buy .mobile-buy-bar {
 }
 
 @media (max-width: 620px) {
-  .ritual { grid-template-columns: 1fr; }
-  .ritual__step { border-right: 0; border-bottom: 1px solid currentColor; }
-  .ritual__step:last-child { border-bottom: 0; }
+  /* two-by-two, not four stacked screens */
+  .ritual__head { flex-direction: column; align-items: flex-start; gap: 5px; padding: 11px 12px 9px; }
+  .ritual__icon { width: 25px; height: 25px; }
+  .ritual__name { font-size: 17px; }
+  .ritual__copy { padding: 10px 12px 13px; font-size: 12.5px; }
+  .ritual .shot { min-height: 96px; padding: 9px 10px; }
+  .ritual .shot__note { display: none; }
+  .ritual .shot__brief { font-size: 12.5px; }
+  .ritual .shot__top { font-size: 9px; padding-left: 15px; }
   .row-item { grid-template-columns: 1fr; gap: 10px; }
   .row-item__p { grid-column: 1; }
   .rows--across .row-item { border-right: 0; border-bottom: 1px solid currentColor; }
@@ -598,6 +701,10 @@ body.has-mobile-buy .mobile-buy-bar {
   .callout { grid-template-columns: 1fr; gap: 12px; }
   .callout__tag { justify-self: start; }
   .buy-option { border-right: 0; border-bottom: 1px solid currentColor; }
+  .break-cell { border-right: 0; border-bottom: 1px solid var(--asphalt); }
+  .break-cell:last-child { border-bottom: 0; }
+  .ritual-mini__step { border-right: 0; border-bottom: 1px solid currentColor; }
+  .ritual-mini__step:last-child { border-bottom: 0; }
   .site-footer { grid-template-columns: 1fr; }
   .strip .shot { border-right: 0; border-bottom: var(--rule) solid var(--asphalt); }
   .strip .shot:last-child { border-bottom: 0; }

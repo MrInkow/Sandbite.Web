@@ -94,11 +94,29 @@
 
   <main id="main">
 
-    <!-- Hero -->
-    <section class="hero" aria-labelledby="bar-title">
+    <!-- Hero doubles as the purchase block -->
+    <section class="hero hero--split" id="buy" tabindex="-1" aria-labelledby="bar-title">
+      <div class="hero__body">
+        <span class="eyebrow">Flavour 01 · First release</span>
+        <h1 class="display t-hero hero__title" id="bar-title">Coffee</h1>
+        <p class="hero__sub">Dark roasted coffee through an oat-and-nut crumble, sweetened with dates and honey. Then a jam you squeeze on top —
+          <!-- TODO: name the jam flavour here once it is decided; do not ship the marker -->
+          <span class="tbc">jam flavour to confirm</span>
+        </p>
+        <p class="offer-line">Bag of 3 <i>·</i> €7 <i>·</i> €2.33 each</p>
+        <div class="btn-row">
+          <a class="btn btn--fill btn--lg" href="https://instagram.com/thesandbites" rel="me noopener" target="_blank" data-checkout-product="coffee-bag3" data-checkout-ready-label="Buy a bag · €7" data-checkout-fallback-label="Order on Instagram">Order on Instagram</a>
+        </div>
+        <p class="small muted" data-checkout-pending style="max-width:40ch">Card checkout isn't switched on yet. Until it is, orders go through Instagram and we confirm each one by message.</p>
+        <p class="hero__meta">
+          <span>Plus <b>shipping</b></span>
+          <span>Sent from <b>Ericeira</b></span>
+          <span>Pickup <b>on request</b></span>
+        </p>
+      </div>
       <div class="hero__media">
         <figure class="shot">
-          <div class="shot__top"><span class="shot__id">D1</span><span class="shot__ratio">21:9 — crop from 4:5</span></div>
+          <div class="shot__top"><span class="shot__id">D1</span><span class="shot__ratio">4:5</span></div>
           <figcaption class="shot__body">
             <span class="shot__label">Photo needed · product hero</span>
             <span class="shot__brief">Bag of 3 straight on, hard directional light</span>
@@ -106,119 +124,43 @@
           <p class="shot__note">Asphalt ground · sharp shadow · no soft box</p>
         </figure>
       </div>
+    </section>
 
-      <div class="hero__body">
-        <span class="eyebrow">Flavour 01 · First release</span>
-        <h1 class="display t-hero hero__title" id="bar-title">Coffee</h1>
-        <p class="hero__sub">Real coffee through the crumble, with a jam you squeeze on yourself. Nuts, oats, dates and honey underneath it. <strong>Three in a bag, €7</strong> plus shipping.</p>
-        <div class="btn-row">
-          <a class="btn btn--fill btn--lg" href="#buy" data-checkout-product="coffee-bag3" data-checkout-ready-label="Get a bag · €7" data-checkout-fallback-label="Get a bag · €7">Get a bag · €7</a>
-          <a class="btn btn--outline btn--lg" href="#how">How you eat it</a>
+    <!-- Short reminder of how you eat it; the full sequence lives on the homepage -->
+    <section class="band band--canvas" style="padding-block:clamp(34px,4vw,56px)" aria-labelledby="how-title">
+      <div class="band__inner">
+        <span class="eyebrow">How you eat it</span>
+        <h2 class="display t-l" id="how-title" style="margin:12px 0 20px">You control the jam.</h2>
+
+        <div class="ritual-mini">
+          <div class="ritual-mini__step">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M9 11h30v26H9z"/><path d="M9 18l7 3-7 3 7 3-7 3"/></svg>
+            <b>Tear</b><span>One pull opens both sections.</span>
+          </div>
+          <div class="ritual-mini__step">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M15 41h18V18H15z"/><path d="M24 13V4"/><path d="M18 10l6-6 6 6"/></svg>
+            <b>Push</b><span>The crumble slides up.</span>
+          </div>
+          <div class="ritual-mini__step">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M18 5h12v19l-6 19-6-19z"/><path d="M13 13h5M30 13h5"/></svg>
+            <b>Squeeze</b><span>As much jam as you want, or none.</span>
+          </div>
+          <div class="ritual-mini__step">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M8 18h31v13H8z"/><path d="M39 18c-5 0-5 3.5-5 6.5s0 6.5 5 6.5"/><path d="M13 33l3 7M21 33l3 7"/></svg>
+            <b>Bite</b><span>Crumbs are the point.</span>
+          </div>
         </div>
-        <p class="hero__meta">
-          <span>Bag of <b>3</b></span>
-          <span><b>€7</b> + shipping</span>
-          <span>Made in <b>Ericeira</b></span>
-        </p>
+
+        <p class="small muted" style="margin-top:16px"><a href="./#how" style="border-bottom:1px solid currentColor">See the full sequence</a></p>
       </div>
     </section>
 
-    <!-- How you eat it -->
-    <section class="band band--canvas" id="how" aria-labelledby="how-title">
+    <!-- The practical detail -->
+    <section class="band" aria-labelledby="detail-title">
       <span class="ghost-n" aria-hidden="true">01</span>
       <div class="band__inner">
-        <span class="eyebrow">The format</span>
-        <h2 class="display t-xl" id="how-title" style="margin:16px 0 22px">
-          You control the jam.
-        </h2>
-        <p class="lede" style="margin-bottom:30px">One tear opens both sections. Push the crumble up, squeeze as much jam as you want on top, alternate bites, or eat the two separately. There's no wrong way and no ritual you're obliged to perform.</p>
-
-        <div class="ritual">
-          <div class="ritual__step">
-            <div class="ritual__head">
-              <span class="ritual__icon" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M9 11h30v26H9z"/><path d="M9 18l7 3-7 3 7 3-7 3"/></svg></span>
-              <span><span class="ritual__n">Step 01</span><span class="ritual__name">Tear</span></span>
-            </div>
-            <figure class="shot shot--ratio-11">
-              <div class="shot__top"><span class="shot__id">B1</span><span class="shot__ratio">1:1</span></div>
-              <figcaption class="shot__body"><span class="shot__label">Photo needed</span><span class="shot__brief">Hands tearing the pack open</span></figcaption>
-              <p class="shot__note">Tripod locked · identical to B2–B4</p>
-            </figure>
-          </div>
-          <div class="ritual__step">
-            <div class="ritual__head">
-              <span class="ritual__icon" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M15 41h18V18H15z"/><path d="M24 13V4"/><path d="M18 10l6-6 6 6"/></svg></span>
-              <span><span class="ritual__n">Step 02</span><span class="ritual__name">Push</span></span>
-            </div>
-            <figure class="shot shot--ratio-11">
-              <div class="shot__top"><span class="shot__id">B2</span><span class="shot__ratio">1:1</span></div>
-              <figcaption class="shot__body"><span class="shot__label">Photo needed</span><span class="shot__brief">Crumble sliding up out of the sleeve</span></figcaption>
-              <p class="shot__note">Same frame · same light</p>
-            </figure>
-          </div>
-          <div class="ritual__step">
-            <div class="ritual__head">
-              <span class="ritual__icon" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M18 5h12v19l-6 19-6-19z"/><path d="M13 13h5M30 13h5"/></svg></span>
-              <span><span class="ritual__n">Step 03</span><span class="ritual__name">Squeeze</span></span>
-            </div>
-            <figure class="shot shot--ratio-11">
-              <div class="shot__top"><span class="shot__id">B3</span><span class="shot__ratio">1:1</span></div>
-              <figcaption class="shot__body"><span class="shot__label">Photo needed</span><span class="shot__brief">Jam squeezed onto the crumble</span></figcaption>
-              <p class="shot__note">Same frame · same light</p>
-            </figure>
-          </div>
-          <div class="ritual__step">
-            <div class="ritual__head">
-              <span class="ritual__icon" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M8 18h31v13H8z"/><path d="M39 18c-5 0-5 3.5-5 6.5s0 6.5 5 6.5"/><path d="M13 33l3 7M21 33l3 7"/></svg></span>
-              <span><span class="ritual__n">Step 04</span><span class="ritual__name">Bite</span></span>
-            </div>
-            <figure class="shot shot--ratio-11">
-              <div class="shot__top"><span class="shot__id">B4</span><span class="shot__ratio">1:1</span></div>
-              <figcaption class="shot__body"><span class="shot__label">Photo needed</span><span class="shot__brief">First bite, crumbs coming off</span></figcaption>
-              <p class="shot__note">Same frame · same light</p>
-            </figure>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Buy -->
-    <section class="band" id="buy" tabindex="-1" aria-labelledby="buy-title">
-      <span class="ghost-n" aria-hidden="true">02</span>
-      <div class="band__inner">
-        <span class="eyebrow">Order</span>
-        <h2 class="display t-xl" id="buy-title" style="margin:16px 0 30px">
-          Get a bag.
-        </h2>
-
-        <div class="buy-grid">
-          <div class="buy-option buy-option--lead">
-            <span class="buy-option__badge">The format</span>
-            <h3 class="display t-m">Bag of 3</h3>
-            <span class="buy-option__price">€7</span>
-            <span class="buy-option__meta">€2.33 each · plus shipping</span>
-            <p>Three crumbles and three jams. Enough for a week of breaks, or one shared afternoon.</p>
-            <a class="btn btn--ink btn--lg" style="margin-top:6px" href="https://instagram.com/thesandbites" rel="me noopener" target="_blank" data-checkout-product="coffee-bag3" data-checkout-ready-label="Buy a bag · €7" data-checkout-fallback-label="Order on Instagram">Order on Instagram</a>
-          </div>
-          <div class="buy-option">
-            <span class="buy-option__badge">Shipping</span>
-            <h3 class="display t-m">Sent from Ericeira</h3>
-            <p>Shipping is charged on top and calculated at checkout. Local pickup in Ericeira can be arranged — message us before ordering.</p>
-            <p class="small muted" data-checkout-pending>Card checkout isn't switched on yet. Until it is, orders go through Instagram and we confirm each one by message.</p>
-            <span class="stamp-badge stamp-badge--alt" style="margin-top:8px"><b>Made by hand</b><span>Ericeira, Portugal</span></span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- What's in it -->
-    <section class="band band--canvas" aria-labelledby="in-title">
-      <span class="ghost-n" aria-hidden="true">03</span>
-      <div class="band__inner">
-        <span class="eyebrow">What's in it</span>
-        <h2 class="display t-xl" id="in-title" style="margin:16px 0 30px">
-          Nothing you<br>can't pronounce.
-        </h2>
+        <span class="eyebrow">The detail</span>
+        <h2 class="display t-xl" id="detail-title" style="margin:14px 0 30px">Nothing you can't pronounce.</h2>
 
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:clamp(22px,3vw,44px);align-items:start">
           <table class="data-table">
@@ -235,13 +177,21 @@
           </table>
 
           <div style="display:flex;flex-direction:column;gap:18px">
-            <span class="stamp-badge" style="align-self:flex-start"><b>Contains nuts</b><span>Full panel at launch</span></span>
+            <table class="data-table">
+              <caption>Practical</caption>
+              <tbody>
+                <tr><td><strong>Allergens</strong></td><td style="text-align:left">Contains nuts. Full declaration at launch.</td></tr>
+                <tr><td><strong>Caffeine</strong></td><td style="text-align:left"><span class="tbc">to be measured</span></td></tr>
+                <tr><td><strong>Storage</strong></td><td style="text-align:left">Cool and dry. Best before on pack.</td></tr>
+                <tr><td><strong>Shipping</strong></td><td style="text-align:left">Charged on top, sent from Ericeira.</td></tr>
+                <tr><td><strong>Pickup</strong></td><td style="text-align:left">Ericeira, by arrangement.</td></tr>
+              </tbody>
+            </table>
+
             <div class="callout">
               <span class="callout__tag">Not yet published</span>
-              <p>Exact percentages, the jam composition, the nutrition panel and the final allergen declaration are deliberately not on this page. They go up when the recipe is locked and the printed label agrees with them, and not a day earlier.</p>
+              <p>Exact percentages, the jam composition and the nutrition panel go up when the recipe is locked and the printed label agrees with them — not a day earlier. The current direction avoids refined sugar.</p>
             </div>
-            <p class="small muted">The current direction avoids refined sugar. If you have an allergy, wait for the full declaration rather than treating this list as one.</p>
-            <p class="small muted">Caffeine content will be stated once the finished recipe is measured. We're not putting an energy or no-crash claim on it until there's something real behind it.</p>
           </div>
         </div>
       </div>
@@ -250,7 +200,7 @@
     <!-- Proof -->
     <section class="split split--blue on-dark" aria-labelledby="proof-title">
       <div class="split__pad">
-        <span class="eyebrow eyebrow--dark" id="proof-title">First proof</span>
+        <span class="eyebrow" id="proof-title">First proof</span>
         <blockquote class="display t-l" style="margin:4px 0">“This is delicious.<br>Keep going.”</blockquote>
         <cite class="small muted" style="font-style:normal">First stranger to taste one · Ericeira</cite>
         <a class="btn btn--fill btn--lg" style="align-self:flex-start;margin-top:12px" href="#buy" data-checkout-product="coffee-bag3" data-checkout-ready-label="Get a bag · €7" data-checkout-fallback-label="Get a bag · €7">Get a bag · €7</a>
@@ -261,13 +211,6 @@
           <figcaption class="shot__body"><span class="shot__label">Photo needed</span><span class="shot__brief">Bitten edge in fingers, crumbs dropping</span></figcaption>
           <p class="shot__note">Dirt under the nail stays in</p>
         </figure>
-      </div>
-    </section>
-
-    <section class="mega band--flavour">
-      <div class="mega__inner">
-        <p class="display t-hero">Squeeze it.<br>Bite it. Make a mess.</p>
-        <p class="sub"><a href="./" style="border-bottom:2px solid currentColor">Back to the start</a></p>
       </div>
     </section>
   </main>
@@ -291,6 +234,7 @@
       <h4>Connect</h4>
       <ul>
         <li><a href="https://instagram.com/thesandbites" rel="me noopener" target="_blank">@thesandbites</a></li>
+        <li><a href="https://instagram.com/thesandbites" rel="noopener" target="_blank">Stock Sandbite</a></li>
         <li class="muted">Ericeira, Portugal</li>
       </ul>
     </div>
