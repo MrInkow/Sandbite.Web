@@ -118,7 +118,7 @@ Root directory: leave blank
 ## Checkout
 
 The site is wired for one Stripe Payment Link. Create it in Stripe for the
-**box of 3 at €8.97**, collecting email, phone and shipping address, with your
+**box of 3 at €7**, collecting email, phone and shipping address, with your
 shipping options configured there. Then paste it in:
 
 ```js
@@ -144,7 +144,7 @@ live, the buttons switch to Stripe and the note hides itself.
 4. **The packaging prototype.** The site describes a one-tear pack that opens
    both sections. That has to exist and be manufacturable before launch, and it
    gates Tiers B and D.
-5. **Unit economics.** €8.97 for three is €2.99 each. The old €0.65/bar cost
+5. **Unit economics.** €7 for three is €2.33 each, against €2.99 sold singly. The old €0.65/bar cost
    assumption was for a single-component bar; two compartments and a jam sachet
    will move it. Finish the cost sheet before this price becomes a commitment.
 6. **Legal pages.** EU distance selling needs terms, a 14-day withdrawal
