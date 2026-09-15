@@ -62,7 +62,7 @@ Everything is driven by custom properties at the top of `assets/css/site.css`.
 | `--asphalt` | `#1B1C1A` | Type, structure, dark bands |
 | `--paper` | `#F1ECE3` | Default page ground |
 | `--canvas` | `#E7E0D3` | Alternate band |
-| `--chore` | `#315E6B` | Master accent: marquee, one split per page |
+| `--chore` | `#315E6B` | Workwear blue: the format band, one split per page |
 | `--flavour` | `#BD5E23` | Worksite Orange, large marks and borders |
 | `--flavour-pale` | `#E08A45` | Flat panels; carries near-black type at 6.4:1 |
 | `--flavour-lift` | `#D4712F` | Orange on asphalt, 5.1:1 |
@@ -70,6 +70,11 @@ Everything is driven by custom properties at the top of `assets/css/site.css`.
 
 Orange has four shades because one mid-tone cannot clear 4.5:1 on both a light
 and a dark ground. Use `--flavour-deep` for anything small on light.
+
+**Colour has roles, one each.** Off-white is the ground. Black carries
+statements and the footer. Workwear blue carries the format band and one split
+per page. Orange is reserved for the Coffee flavour and small accents: buttons,
+eyebrows, crop marks. Adding a second orange panel is how this stops working.
 
 **Adding a flavour** takes four values. Add a block next to
 `[data-flavour="coffee"]` in the CSS, set the four `--flavour*` tokens, then put
