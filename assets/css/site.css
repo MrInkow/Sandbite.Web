@@ -353,6 +353,8 @@ table { border-collapse: collapse; width: 100%; }
 .hero__title em { font-style: normal; color: var(--flavour); }
 .hero__sub { font-size: var(--t-s); line-height: 1.5; max-width: 46ch; color: var(--muted); }
 .hero__sub strong { color: var(--asphalt); font-weight: 500; }
+/* second sentence starts its own line, without a hard <br> to wrap around */
+.hero__sub .line { display: block; }
 .hero__meta {
   display: flex; flex-wrap: wrap; gap: 8px 26px;
   font-family: var(--f-mono); font-size: 10.5px; letter-spacing: .16em;
