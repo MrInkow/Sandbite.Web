@@ -13,7 +13,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&family=Roboto+Mono:wght@400;500&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Roboto+Condensed:wght@400;700&family=Roboto+Mono:wght@400;500&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/site.css">
 </head>
 <body>
@@ -21,10 +21,15 @@
 
 <div class="page">
 
-  <div class="ticker">
-    <span>Made by hand in Ericeira</span>
-    <span class="ticker__accent">Squeeze it. Bite it. Make a mess.</span>
-    <a class="ticker__opt" href="https://instagram.com/thesandbites" rel="me noopener" target="_blank">@thesandbites</a>
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track">
+      <div class="marquee__group">
+        <span>Nothing here. Crumbs, maybe.</span><span>★</span><span>Made by hand in Ericeira</span><span>★</span>
+      </div>
+      <div class="marquee__group">
+        <span>Nothing here. Crumbs, maybe.</span><span>★</span><span>Made by hand in Ericeira</span><span>★</span>
+      </div>
+    </div>
   </div>
 
   <header class="site-header">
@@ -39,10 +44,10 @@
   </header>
 
   <main id="main" style="flex:1;display:flex">
-    <section class="band band--ink" style="flex:1;display:flex;align-items:center;border-bottom:0">
+    <section class="band band--ink on-dark" style="flex:1;display:flex;align-items:center;border-bottom:0">
       <div class="band__inner" style="display:flex;flex-direction:column;gap:20px;align-items:flex-start">
         <span class="eyebrow eyebrow--dark">Error 404</span>
-        <h1 class="display t-xl">Nothing here.<br>Crumbs, maybe.</h1>
+        <h1 class="display t-hero"><span class="cut">Nothing here.</span><br><em>Crumbs, maybe.</em></h1>
         <p class="lede muted">That page has been moved or never existed. The three that do are below.</p>
         <div class="btn-row">
           <a class="btn btn--fill" href="./">Back to the start</a>

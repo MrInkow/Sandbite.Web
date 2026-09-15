@@ -23,7 +23,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&family=Roboto+Mono:wght@400;500&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Roboto+Condensed:wght@400;700&family=Roboto+Mono:wght@400;500&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/site.css">
 
 <script type="application/ld+json">
@@ -35,11 +35,7 @@
   "logo": "https://sandbite.com/assets/img/sandbite-wordmark.svg",
   "description": "Portable crumble snacks with a squeeze-on jam, made by hand in Ericeira, Portugal.",
   "sameAs": ["https://instagram.com/thesandbites"],
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Ericeira",
-    "addressCountry": "PT"
-  }
+  "address": { "@type": "PostalAddress", "addressLocality": "Ericeira", "addressCountry": "PT" }
 }
 </script>
 </head>
@@ -47,12 +43,6 @@
 <a class="skip-link" href="#main">Skip to content</a>
 
 <div class="page">
-
-  <div class="ticker">
-    <span>Made by hand in Ericeira</span>
-    <span class="ticker__accent">Squeeze it. Bite it. Make a mess.</span>
-    <a class="ticker__opt" href="https://instagram.com/thesandbites" rel="me noopener" target="_blank">@thesandbites</a>
-  </div>
 
   <header class="site-header">
     <a class="brand" href="./" aria-label="Sandbite — home">
@@ -74,176 +64,153 @@
     <a class="btn btn--ink header__cta" href="coffee.html#buy" data-checkout-product="coffee-bag3" data-checkout-ready-label="Bag of 3 · €7" data-checkout-fallback-label="Bag of 3 · €7">Bag of 3 · €7</a>
   </header>
 
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track">
+      <div class="marquee__group">
+        <span>Squeeze it. Bite it. Make a mess.</span><span>★</span>
+        <span>Made by hand in Ericeira</span><span>★</span>
+        <span>Flavour 01 — Coffee</span><span>★</span>
+        <span>Three in a bag · €7</span><span>★</span>
+      </div>
+      <div class="marquee__group">
+        <span>Squeeze it. Bite it. Make a mess.</span><span>★</span>
+        <span>Made by hand in Ericeira</span><span>★</span>
+        <span>Flavour 01 — Coffee</span><span>★</span>
+        <span>Three in a bag · €7</span><span>★</span>
+      </div>
+    </div>
+  </div>
+
   <main id="main">
 
     <!-- Hero -->
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="hero__copy">
-        <span class="eyebrow eyebrow--dark">Flavour 01 · Coffee</span>
-        <h1 class="display t-hero hero__title" id="hero-title">Squeeze it.<br>Bite it.<br><b>Make a mess.</b></h1>
-        <p class="hero__sub">A portable crumble with a jam you squeeze on yourself. You decide how much goes on each bite. <strong>Three in a bag, €7</strong> plus shipping.</p>
-        <div class="btn-row">
-          <a class="btn btn--fill" href="coffee.html#buy" data-checkout-product="coffee-bag3" data-checkout-ready-label="Get a bag of 3" data-checkout-fallback-label="Get a bag of 3">Get a bag of 3</a>
-          <a class="btn btn--on-dark" href="#how">See how it works</a>
+    <section class="hero on-dark" aria-labelledby="hero-title">
+      <h1 class="display t-hero hero__title" id="hero-title">
+        <span class="cut">Squeeze it.</span><br>Bite it.<br><em>Make a mess.</em>
+      </h1>
+
+      <div class="hero__lower">
+        <div class="hero__say">
+          <p class="hero__sub">A portable crumble with a jam you squeeze on yourself. You decide how much goes on every bite. <strong>Three in a bag, €7</strong> plus shipping.</p>
+          <div class="btn-row">
+            <a class="btn btn--fill btn--lg" href="coffee.html#buy" data-checkout-product="coffee-bag3" data-checkout-ready-label="Get a bag of 3" data-checkout-fallback-label="Get a bag of 3">Get a bag of 3</a>
+            <a class="btn btn--on-dark btn--lg" href="#how">See how it works</a>
+          </div>
+          <p class="hero__meta">
+            <span>Made by hand · <b>Ericeira, PT</b></span>
+            <span>Flavour 01 · <b>Coffee</b></span>
+          </p>
         </div>
-        <p class="hero__meta">
-          <span>Made by hand · <b>Ericeira, PT</b></span>
-          <span>Flavour 01 · <b>Coffee</b></span>
+        <div class="hero__media">
+          <figure class="shot">
+            <div class="shot__top"><span class="shot__id">A1</span><span class="shot__ratio">3:2 — crop 4:5</span></div>
+            <figcaption class="shot__body">
+              <span class="shot__label">Photo needed · hero</span>
+              <span class="shot__brief">Jam squeezed onto the crumble, caught mid-fall</span>
+            </figcaption>
+            <p class="shot__note">Hard flash · dark ground</p>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- The problem: pure type, no cards -->
+    <section class="mega band--flavour" aria-labelledby="why-title">
+      <div class="mega__inner">
+        <span class="eyebrow" style="color:var(--canvas);opacity:.8">01 — Why we bothered</span>
+        <p class="display t-hero" id="why-title" style="margin-top:18px">
+          <span class="cut">Snack bars</span><br>became too boring.
         </p>
-      </div>
-      <div class="hero__media">
-        <figure class="shot">
-          <div class="shot__top"><span class="shot__id">A1</span><span class="shot__ratio">3:2 — crop to 4:5</span></div>
-          <figcaption class="shot__body">
-            <span class="shot__label">Photo needed · hero</span>
-            <span class="shot__brief">Jam being squeezed onto the crumble, caught mid-fall</span>
-          </figcaption>
-          <p class="shot__note">Hard flash · dark ground · dead space on one side for type</p>
-        </figure>
+        <p class="sub" style="color:var(--canvas)">A wall of safe rectangles and clean claims. Somewhere in there the snack stopped being a treat and turned into an assignment. Adults are still big kids — growing up is not a reason to lose that.</p>
       </div>
     </section>
 
-    <!-- 01 The problem -->
-    <section class="band band--ink" aria-labelledby="why-title">
+    <!-- The format -->
+    <section class="band band--blue on-dark" id="how" aria-labelledby="how-title">
+      <span class="ghost-n" aria-hidden="true">02</span>
       <div class="band__inner">
-        <div class="band-head">
-          <span class="band-head__n">01</span>
-          <div class="band-head__t">
-            <span class="eyebrow eyebrow--dark">Why we bothered</span>
-            <h2 class="display t-xl" id="why-title">Snack bars became too boring.</h2>
-          </div>
-        </div>
-
-        <div class="grid grid--2">
-          <div class="cell">
-            <span class="cell__n">The category</span>
-            <h3 class="display t-m">A wall of safe rectangles</h3>
-            <p class="muted">Clean claims, flat textures, products people tolerate because they are supposed to be good for them. Somewhere in there the snack stopped being a treat and became an assignment.</p>
-          </div>
-          <div class="cell">
-            <span class="cell__n">Our position</span>
-            <h3 class="display t-m">Adults are still big kids</h3>
-            <p class="muted">People still like opening things, discovering something, making a mess and having a product with a point of view. Growing up is not a reason to lose that.</p>
-          </div>
-        </div>
-
-        <div class="stamp" style="margin-top:22px">
-          <span class="stamp__tag">The rule</span>
-          <p>Taste first, not taste only. We will not make something that tastes bad and ask you to accept it because it is healthy. It has to satisfy the craving first and earn the right to talk about ingredients second.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- 02 The ritual -->
-    <section class="band band--blue" id="how" aria-labelledby="how-title">
-      <div class="band__inner">
-        <div class="band-head">
-          <span class="band-head__n">02</span>
-          <div class="band-head__t">
-            <span class="eyebrow eyebrow--blue">The format</span>
-            <h2 class="display t-xl" id="how-title">Tear. Push. Squeeze. Bite.</h2>
-          </div>
-        </div>
-
-        <p class="lede" style="margin-bottom:24px">One tear opens the crumble section and the jam section together. Push the crumble up, squeeze the jam on top, and eat it however you want. Ignore all of that and it still works as a snack.</p>
+        <span class="eyebrow eyebrow--blue">The format</span>
+        <h2 class="display t-xl" id="how-title" style="margin:16px 0 22px">
+          <span class="cut">Tear. Push.</span> Squeeze. Bite.
+        </h2>
+        <p class="lede" style="margin-bottom:30px">One tear opens the crumble and the jam together. Push it up, squeeze the jam on top, eat it however you want. Ignore all of that and it still works as a snack.</p>
 
         <div class="ritual">
           <div class="ritual__step">
             <div class="ritual__head">
-              <span class="ritual__icon" aria-hidden="true">
-                <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M9 11h30v26H9z"/><path d="M9 18l7 3-7 3 7 3-7 3"/></svg>
-              </span>
+              <span class="ritual__icon" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M9 11h30v26H9z"/><path d="M9 18l7 3-7 3 7 3-7 3"/></svg></span>
               <span><span class="ritual__n">Step 01</span><span class="ritual__name">Tear</span></span>
             </div>
             <figure class="shot shot--ratio-11">
               <div class="shot__top"><span class="shot__id">B1</span><span class="shot__ratio">1:1</span></div>
-              <figcaption class="shot__body">
-                <span class="shot__label">Photo needed</span>
-                <span class="shot__brief">Hands tearing the pack open</span>
-              </figcaption>
+              <figcaption class="shot__body"><span class="shot__label">Photo needed</span><span class="shot__brief">Hands tearing the pack open</span></figcaption>
               <p class="shot__note">Tripod locked · identical to B2–B4</p>
             </figure>
             <p class="ritual__copy">One pull opens both sections at once.</p>
           </div>
-
           <div class="ritual__step">
             <div class="ritual__head">
-              <span class="ritual__icon" aria-hidden="true">
-                <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M15 41h18V18H15z"/><path d="M24 13V4"/><path d="M18 10l6-6 6 6"/></svg>
-              </span>
+              <span class="ritual__icon" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M15 41h18V18H15z"/><path d="M24 13V4"/><path d="M18 10l6-6 6 6"/></svg></span>
               <span><span class="ritual__n">Step 02</span><span class="ritual__name">Push</span></span>
             </div>
             <figure class="shot shot--ratio-11">
               <div class="shot__top"><span class="shot__id">B2</span><span class="shot__ratio">1:1</span></div>
-              <figcaption class="shot__body">
-                <span class="shot__label">Photo needed</span>
-                <span class="shot__brief">Crumble sliding up out of the sleeve</span>
-              </figcaption>
+              <figcaption class="shot__body"><span class="shot__label">Photo needed</span><span class="shot__brief">Crumble sliding up out of the sleeve</span></figcaption>
               <p class="shot__note">Same frame · same light</p>
             </figure>
-            <p class="ritual__copy">The crumble slides up. No clean table needed.</p>
+            <p class="ritual__copy">It slides up. No clean table needed.</p>
           </div>
-
           <div class="ritual__step">
             <div class="ritual__head">
-              <span class="ritual__icon" aria-hidden="true">
-                <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M18 5h12v19l-6 19-6-19z"/><path d="M13 13h5M30 13h5"/></svg>
-              </span>
+              <span class="ritual__icon" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M18 5h12v19l-6 19-6-19z"/><path d="M13 13h5M30 13h5"/></svg></span>
               <span><span class="ritual__n">Step 03</span><span class="ritual__name">Squeeze</span></span>
             </div>
             <figure class="shot shot--ratio-11">
               <div class="shot__top"><span class="shot__id">B3</span><span class="shot__ratio">1:1</span></div>
-              <figcaption class="shot__body">
-                <span class="shot__label">Photo needed</span>
-                <span class="shot__brief">Jam squeezed onto the crumble</span>
-              </figcaption>
+              <figcaption class="shot__body"><span class="shot__label">Photo needed</span><span class="shot__brief">Jam squeezed onto the crumble</span></figcaption>
               <p class="shot__note">Same frame · same light</p>
             </figure>
-            <p class="ritual__copy">As much as you want, or none at all.</p>
+            <p class="ritual__copy">As much as you want, or none.</p>
           </div>
-
           <div class="ritual__step">
             <div class="ritual__head">
-              <span class="ritual__icon" aria-hidden="true">
-                <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M8 18h31v13H8z"/><path d="M39 18c-5 0-5 3.5-5 6.5s0 6.5 5 6.5"/><path d="M13 33l3 7M21 33l3 7"/></svg>
-              </span>
+              <span class="ritual__icon" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M8 18h31v13H8z"/><path d="M39 18c-5 0-5 3.5-5 6.5s0 6.5 5 6.5"/><path d="M13 33l3 7M21 33l3 7"/></svg></span>
               <span><span class="ritual__n">Step 04</span><span class="ritual__name">Bite</span></span>
             </div>
             <figure class="shot shot--ratio-11">
               <div class="shot__top"><span class="shot__id">B4</span><span class="shot__ratio">1:1</span></div>
-              <figcaption class="shot__body">
-                <span class="shot__label">Photo needed</span>
-                <span class="shot__brief">First bite, crumbs coming off</span>
-              </figcaption>
+              <figcaption class="shot__body"><span class="shot__label">Photo needed</span><span class="shot__brief">First bite, crumbs coming off</span></figcaption>
               <p class="shot__note">Same frame · same light</p>
             </figure>
-            <p class="ritual__copy">Crumbs are the point. Mess should be intentional.</p>
+            <p class="ritual__copy">Crumbs are the point.</p>
           </div>
         </div>
 
-        <div class="stamp" style="margin-top:24px">
-          <span class="stamp__tag">Built for</span>
-          <p>Dirty hands. You should be able to open it and eat it on a tailgate, a deck or a scaffold plank without needing somewhere clean to put it down.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:22px;align-items:center;margin-top:30px">
+          <span class="stamp-badge"><b>Built for dirty hands</b><span>No clean table required</span></span>
+          <p class="small" style="max-width:40ch">Open it and eat it on a tailgate, a deck or a scaffold plank. Mess should be intentional — failure should not.</p>
         </div>
       </div>
     </section>
 
-    <!-- 03 Coffee -->
-    <section class="split" id="coffee" aria-labelledby="coffee-title">
+    <!-- Coffee: full-bleed product -->
+    <section class="split split--ink on-dark" id="coffee" aria-labelledby="coffee-title">
       <div class="split__pad">
-        <span class="eyebrow">Flavour 01</span>
-        <h2 class="display t-xl" id="coffee-title">Coffee</h2>
-        <p class="body">Real coffee in the crumble, not a coffee flavouring. Nuts, oats, dates and honey underneath it. It is a sweet break that happens to keep you going, rather than a supplement that happens to be sweet.</p>
+        <span class="eyebrow eyebrow--dark">03 — Flavour 01</span>
+        <h2 class="display t-hero" id="coffee-title" style="margin:6px 0 4px">
+          <span class="cut">Coffee</span>
+        </h2>
+        <p class="body muted">Real coffee through the crumble, not a coffee flavouring. Nuts, oats, dates and honey underneath it. A sweet break that happens to keep you going, rather than a supplement that happens to be sweet.</p>
 
-        <div class="spec">
+        <div class="spec" style="margin-top:8px">
           <div class="spec__cell"><span class="spec__value">3</span><span class="spec__label">Per bag</span></div>
           <div class="spec__cell"><span class="spec__value">€7</span><span class="spec__label">Plus shipping</span></div>
           <div class="spec__cell"><span class="spec__value">01</span><span class="spec__label">Flavour</span></div>
         </div>
 
-        <div class="btn-row">
-          <a class="btn btn--fill" href="coffee.html#buy" data-checkout-product="coffee-bag3" data-checkout-ready-label="Get a bag of 3" data-checkout-fallback-label="Get a bag of 3">Get a bag of 3</a>
-          <a class="btn btn--outline" href="coffee.html">All the detail</a>
+        <div class="btn-row" style="margin-top:8px">
+          <a class="btn btn--fill btn--lg" href="coffee.html#buy" data-checkout-product="coffee-bag3" data-checkout-ready-label="Get a bag of 3" data-checkout-fallback-label="Get a bag of 3">Get a bag of 3</a>
+          <a class="btn btn--on-dark btn--lg" href="coffee.html">All the detail</a>
         </div>
       </div>
       <div class="split__media">
@@ -253,176 +220,172 @@
             <span class="shot__label">Photo needed · product</span>
             <span class="shot__brief">Bag of 3 straight on, hard directional light</span>
           </figcaption>
-          <p class="shot__note">Asphalt ground · this replaces the old pack render</p>
+          <p class="shot__note">Asphalt ground · sharp shadow · no soft box</p>
         </figure>
       </div>
     </section>
 
-    <!-- 04 Who it's for -->
+    <!-- Who it's for: big numbered rows, no cards -->
     <section class="band" aria-labelledby="who-title">
+      <span class="ghost-n" aria-hidden="true">04</span>
       <div class="band__inner">
-        <div class="band-head">
-          <span class="band-head__n">04</span>
-          <div class="band-head__t">
-            <span class="eyebrow">Who it's for</span>
-            <h2 class="display t-xl" id="who-title">For people who haven't grown boring.</h2>
-          </div>
-        </div>
+        <span class="eyebrow">Who it's for</span>
+        <h2 class="display t-xl" id="who-title" style="margin:16px 0 30px">
+          For people who<br><span class="cut">haven't grown</span> boring.
+        </h2>
 
-        <p class="lede" style="margin-bottom:26px">The people who are already using their hands all day. End of a shift, halfway up a job, off the boat, between sessions. The break is short and it should be worth something.</p>
-
-        <div class="grid grid--3">
-          <div class="cell">
-            <span class="cell__n">The moment</span>
-            <h3 class="display t-m">The pause inside the work</h3>
-            <p class="muted">You sit down, look back at what you have just done, and have five minutes. That is the whole occasion. We are not trying to own the job — just the break in the middle of it.</p>
+        <div class="rows">
+          <div class="row-item">
+            <span class="row-item__n">01</span>
+            <h3 class="display row-item__h">The pause inside the work</h3>
+            <p class="row-item__p muted">You sit down, look back at what you've just done, and you've got five minutes. That's the whole occasion. We're not trying to own the job — just the break in the middle of it.</p>
           </div>
-          <div class="cell">
-            <span class="cell__n">The standard</span>
-            <h3 class="display t-m">Holds up in a bag</h3>
-            <p class="muted">It is built to crumble, which is the point, but it still has to survive a toolbag, a glovebox and a hot van. Mess should be intentional. Failure should not.</p>
+          <div class="row-item">
+            <span class="row-item__n">02</span>
+            <h3 class="display row-item__h">Holds up in a bag</h3>
+            <p class="row-item__p muted">It's built to crumble, which is the point, but it still has to survive a toolbag, a glovebox and a hot van. Mess should be intentional. Failure should not.</p>
           </div>
-          <div class="cell">
-            <span class="cell__n">The promise</span>
-            <h3 class="display t-m">No lecture attached</h3>
-            <p class="muted">Recognisable ingredients and useful energy, said plainly. We are not going to pretend this is medicine or put a performance claim on it we cannot back up.</p>
+          <div class="row-item">
+            <span class="row-item__n">03</span>
+            <h3 class="display row-item__h">No lecture attached</h3>
+            <p class="row-item__p muted">Recognisable ingredients and useful energy, said plainly. We're not going to pretend this is medicine or put a performance claim on it we can't back up.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <div class="strip">
+    <div class="strip on-dark">
       <figure class="shot shot--ratio-45">
         <div class="shot__top"><span class="shot__id">C1</span><span class="shot__ratio">4:5</span></div>
-        <figcaption class="shot__body">
-          <span class="shot__label">Photo needed</span>
-          <span class="shot__brief">Tailgate at end of shift, boots down, pack in hand</span>
-        </figcaption>
+        <figcaption class="shot__body"><span class="shot__label">Photo needed</span><span class="shot__brief">Tailgate at end of shift, boots down, pack in hand</span></figcaption>
         <p class="shot__note">Available light · no styling</p>
       </figure>
       <figure class="shot shot--ratio-45">
         <div class="shot__top"><span class="shot__id">C4</span><span class="shot__ratio">4:5</span></div>
-        <figcaption class="shot__body">
-          <span class="shot__label">Photo needed</span>
-          <span class="shot__brief">Site at lunch, hi-vis, sitting on materials</span>
-        </figcaption>
-        <p class="shot__note">Real break · real people · no hard-hat props</p>
+        <figcaption class="shot__body"><span class="shot__label">Photo needed</span><span class="shot__brief">Site at lunch, hi-vis, sitting on materials</span></figcaption>
+        <p class="shot__note">Real break · no hard-hat props</p>
       </figure>
       <figure class="shot shot--ratio-45">
         <div class="shot__top"><span class="shot__id">A3</span><span class="shot__ratio">4:5</span></div>
-        <figcaption class="shot__body">
-          <span class="shot__label">Photo needed</span>
-          <span class="shot__brief">Open palm, crumbs and jam smear, work cuff in frame</span>
-        </figcaption>
+        <figcaption class="shot__body"><span class="shot__label">Photo needed</span><span class="shot__brief">Open palm, crumbs and jam smear, work cuff in frame</span></figcaption>
         <p class="shot__note">Rough hands · dirt stays in</p>
       </figure>
     </div>
 
-    <!-- 05 What's in it -->
+    <!-- What's in it -->
     <section class="band band--paper" aria-labelledby="in-title">
+      <span class="ghost-n" aria-hidden="true">05</span>
       <div class="band__inner">
-        <div class="band-head">
-          <span class="band-head__n">05</span>
-          <div class="band-head__t">
-            <span class="eyebrow">What's in it</span>
-            <h2 class="display t-xl" id="in-title">Recognisable ingredients.</h2>
-          </div>
-        </div>
+        <span class="eyebrow">What's in it</span>
+        <h2 class="display t-xl" id="in-title" style="margin:16px 0 30px">
+          <span class="cut">Recognisable</span> ingredients.
+        </h2>
 
-        <div class="grid grid--2" style="border:0">
-          <div class="cell" style="border:0;padding-left:0">
-            <table class="data-table">
-              <caption>Coffee — ingredient logic</caption>
-              <thead>
-                <tr><th scope="col">Ingredient</th><th scope="col">What it does</th></tr>
-              </thead>
-              <tbody>
-                <tr><td>Nuts</td><td>Fats and energy</td></tr>
-                <tr><td>Oats</td><td>Carbohydrate base</td></tr>
-                <tr><td>Dates</td><td>Sweetness and binding</td></tr>
-                <tr><td>Honey</td><td>Sweetness and binding</td></tr>
-                <tr><td>Coconut oil</td><td>Keeps it solid</td></tr>
-                <tr><td>Coffee</td><td>The flavour peak</td></tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="cell" style="border:0;gap:16px">
-            <div class="stamp">
-              <span class="stamp__tag">Pending</span>
-              <p>Exact percentages, the jam composition, the nutrition panel and the final allergen declaration are not published here yet. They go up once the recipe is locked and the printed label agrees with them — not before.</p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:clamp(22px,3vw,44px);align-items:start">
+          <table class="data-table">
+            <caption>Coffee — ingredient logic</caption>
+            <thead><tr><th scope="col"><span>Ingredient</span></th><th scope="col"><span>What it does</span></th></tr></thead>
+            <tbody>
+              <tr><td>Nuts</td><td>Fats and energy</td></tr>
+              <tr><td>Oats</td><td>Carbohydrate base</td></tr>
+              <tr><td>Dates</td><td>Sweetness and binding</td></tr>
+              <tr><td>Honey</td><td>Sweetness and binding</td></tr>
+              <tr><td>Coconut oil</td><td>Keeps the crumble solid</td></tr>
+              <tr><td>Coffee</td><td>The flavour peak</td></tr>
+            </tbody>
+          </table>
+
+          <div style="display:flex;flex-direction:column;gap:18px">
+            <span class="stamp-badge stamp-badge--alt" style="align-self:flex-start"><b>Contains nuts</b><span>Full panel at launch</span></span>
+            <div class="callout">
+              <span class="callout__tag">Not yet published</span>
+              <p>Exact percentages, the jam composition, the nutrition panel and the final allergen declaration aren't on this page on purpose. They go up when the recipe is locked and the printed label agrees with them, and not a day earlier.</p>
             </div>
-            <p class="small muted">Current direction avoids refined sugar. Nuts are present throughout, so this will carry a nut allergen declaration. If you have an allergy, wait for the full panel rather than taking this page as one.</p>
+            <p class="small muted">Current direction avoids refined sugar. If you have an allergy, wait for the full declaration rather than treating this list as one.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 06 Get one -->
-    <section class="band band--ink" id="get" aria-labelledby="get-title">
+    <!-- Get one -->
+    <section class="band band--ink on-dark" id="get" aria-labelledby="get-title">
+      <span class="ghost-n" aria-hidden="true">06</span>
       <div class="band__inner">
-        <div class="band-head">
-          <span class="band-head__n">06</span>
-          <div class="band-head__t">
-            <span class="eyebrow eyebrow--dark">Get one</span>
-            <h2 class="display t-xl" id="get-title">Three ways in.</h2>
-          </div>
-        </div>
+        <span class="eyebrow eyebrow--dark">Get one</span>
+        <h2 class="display t-xl" id="get-title" style="margin:16px 0 30px">Three ways in.</h2>
 
-        <div class="grid grid--3">
-          <div class="cell">
-            <span class="cell__n">Direct</span>
-            <h3 class="display t-m">Order a bag</h3>
-            <p class="muted">Three in a bag, €7 plus shipping, sent from Ericeira.</p>
-            <a class="btn btn--fill btn--sm" style="margin-top:6px;align-self:flex-start" href="coffee.html#buy" data-checkout-product="coffee-bag3" data-checkout-ready-label="Order now" data-checkout-fallback-label="Order via Instagram">Order via Instagram</a>
+        <div class="rows">
+          <div class="row-item">
+            <span class="row-item__n">01</span>
+            <h3 class="display row-item__h">Order a bag</h3>
+            <div>
+              <p class="row-item__p muted" style="margin-bottom:14px">Three in a bag, €7 plus shipping, sent from Ericeira.</p>
+              <a class="btn btn--fill btn--sm" href="coffee.html#buy" data-checkout-product="coffee-bag3" data-checkout-ready-label="Order now" data-checkout-fallback-label="Order via Instagram">Order via Instagram</a>
+            </div>
           </div>
-          <div class="cell">
-            <span class="cell__n">In person</span>
-            <h3 class="display t-m">Find a shop</h3>
-            <p class="muted">Vizinha, Ericeira. That is the honest list right now — we are not going to pad it with shops that are not actually selling it.</p>
+          <div class="row-item">
+            <span class="row-item__n">02</span>
+            <h3 class="display row-item__h">Find a shop</h3>
+            <p class="row-item__p muted">Vizinha, Ericeira. That's the honest list right now — we're not padding it with shops that aren't actually selling it.</p>
           </div>
-          <div class="cell">
-            <span class="cell__n">Trade</span>
-            <h3 class="display t-m">Stock it</h3>
-            <p class="muted">Independent shops and cafés first. If you run one, message us and we will send case specs and trade price.</p>
-            <a class="btn btn--on-dark btn--sm" style="margin-top:6px;align-self:flex-start" href="https://instagram.com/thesandbites" rel="me noopener" target="_blank">Get in touch</a>
+          <div class="row-item">
+            <span class="row-item__n">03</span>
+            <h3 class="display row-item__h">Stock it</h3>
+            <div>
+              <p class="row-item__p muted" style="margin-bottom:14px">Independent shops and cafés first. If you run one, message us and we'll send case specs and trade price.</p>
+              <a class="btn btn--on-dark btn--sm" href="https://instagram.com/thesandbites" rel="me noopener" target="_blank">Get in touch</a>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 07 Follow -->
-    <section class="split split--blue" aria-labelledby="follow-title">
+    <div class="marquee marquee--blue" aria-hidden="true">
+      <div class="marquee__track">
+        <div class="marquee__group">
+          <span>Makes the break worth taking</span><span>★</span>
+          <span>Buy for discovery · Rebuy for taste</span><span>★</span>
+          <span>Ericeira, Portugal</span><span>★</span>
+        </div>
+        <div class="marquee__group">
+          <span>Makes the break worth taking</span><span>★</span>
+          <span>Buy for discovery · Rebuy for taste</span><span>★</span>
+          <span>Ericeira, Portugal</span><span>★</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Follow -->
+    <section class="split" aria-labelledby="follow-title">
       <div class="split__pad">
-        <span class="eyebrow eyebrow--blue">Follow the build</span>
-        <h2 class="display t-l" id="follow-title">We are still making this.</h2>
-        <p class="body">The pack mechanism, the crumble tests, the batches that did not work. One account, no newsletter, nothing you have to sign up for.</p>
-        <a class="btn btn--on-dark" style="align-self:flex-start" href="https://instagram.com/thesandbites" rel="me noopener" target="_blank">Follow @thesandbites</a>
+        <span class="eyebrow">Follow the build</span>
+        <h2 class="display t-l" id="follow-title">We're still making this.</h2>
+        <p class="body">The pack mechanism, the crumble tests, the batches that didn't work. One account, no newsletter, nothing to sign up for.</p>
+        <a class="btn btn--fill" style="align-self:flex-start" href="https://instagram.com/thesandbites" rel="me noopener" target="_blank">Follow @thesandbites</a>
       </div>
       <div class="split__media">
         <figure class="shot">
           <div class="shot__top"><span class="shot__id">C7</span><span class="shot__ratio">4:5</span></div>
-          <figcaption class="shot__body">
-            <span class="shot__label">Photo needed</span>
-            <span class="shot__brief">Kitchen counter mid-batch: trays, spill, hands working</span>
-          </figcaption>
+          <figcaption class="shot__body"><span class="shot__label">Photo needed</span><span class="shot__brief">Kitchen counter mid-batch: trays, spill, hands working</span></figcaption>
           <p class="shot__note">The process shot · available light</p>
         </figure>
       </div>
     </section>
 
-    <section class="statement">
-      <p class="display">Makes the break<br>worth taking.</p>
-      <p class="small muted sub">Ericeira, Portugal</p>
+    <!-- Closing statement -->
+    <section class="mega band--ink on-dark">
+      <div class="mega__inner">
+        <p class="display">Makes the break<br><em>worth taking.</em></p>
+      </div>
     </section>
   </main>
 
   <footer class="site-footer">
     <div>
       <img class="footer__logo" src="assets/img/sandbite-wordmark-canvas.svg" alt="Sandbite" width="9814" height="1945" loading="lazy" decoding="async">
-      <p class="eyebrow eyebrow--dark" style="margin:12px 0 10px">Squeeze it. Bite it. Make a mess.</p>
+      <p class="eyebrow eyebrow--dark" style="margin:14px 0 10px">Squeeze it. Bite it. Make a mess.</p>
       <p class="small muted" style="max-width:36ch">Portable crumble with a squeeze-on jam. Made by hand in Ericeira, Portugal. Contains nuts.</p>
     </div>
-
     <div>
       <h4>Explore</h4>
       <ul>
@@ -432,7 +395,6 @@
         <li><a href="#get">Where to get it</a></li>
       </ul>
     </div>
-
     <div>
       <h4>Connect</h4>
       <ul>
