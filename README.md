@@ -10,8 +10,8 @@ crumble with a squeeze-on jam**, not an energy bar. Flavour 01 is **Coffee**.
 Places inspire flavours but do not own the brand, so the island material lives
 on the story page only.
 
-Every photograph on the site is currently a **placeholder that briefs the shot
-it is waiting for** — shot ID, what it has to show, aspect ratio and lighting.
+Product and break photographs are currently **placeholders that brief each shot
+they are waiting for**; the Story page retains its existing documentary images — shot ID, what it has to show, aspect ratio and lighting.
 Search the HTML for `class="shot"` to find them all.
 
 ## Files
@@ -80,8 +80,8 @@ the blue band twice.
 
 **Colour has roles, one each.** Off-white is the ground. Black carries
 statements and the footer. Workwear blue carries the format band and one split
-per page. Orange is reserved for the Coffee flavour and small accents: buttons,
-eyebrows, crop marks. Adding a second orange panel is how this stops working.
+per page. Orange is reserved for the Coffee flavour and small accents. Buttons,
+eyebrows and crop marks use black, off-white and blue. Adding a second orange panel is how this stops working.
 
 **Adding a flavour** takes four values. Add a block next to
 `[data-flavour="coffee"]` in the CSS, set the four `--flavour*` tokens, then put
@@ -121,7 +121,7 @@ Push to GitHub, then connect the repo in Cloudflare Pages:
 
 ```
 Framework preset: None
-Production branch: main
+Production branch: confirm the branch connected in the existing Cloudflare project
 Build command: sh scripts/build-deploy.sh
 Build output directory: dist
 Root directory: leave blank
@@ -140,12 +140,12 @@ window.SANDBITE_CHECKOUT = {
 ```
 
 Until that is a live `https://` link, every buy button falls back to Instagram
-and the "card checkout is not switched on yet" note stays visible. Once it is
+and the Instagram ordering instructions stay visible. Once it is
 live, the buttons switch to Stripe and the note hides itself.
 
 ## Still outstanding
 
-1. **The photography.** Everything above. Tier B blocks the most.
+1. **The photography.** Product and break photos above; keep the existing Story images. Tier B is the priority.
 2. **The recipe.** Exact percentages, the jam composition, the nutrition panel
    and the final allergen declaration are deliberately not published. The site
    currently says "contains nuts" and nothing more specific. Do not publish the
@@ -164,7 +164,8 @@ live, the buttons switch to Stripe and the note hides itself.
 7. **Self-host the fonts.** Hotlinking Google Fonts has been found to breach
    GDPR in the EU. Subset Roboto Condensed, Roboto and Roboto Mono to WOFF2 and
    serve them from `assets/` — also faster.
-8. **Wholesale page.** The channel plan is independents first, with a target of
-   20 stockists. There is nothing on the site for a shop owner yet.
+8. **Wholesale details.** The Contact page routes shop and café enquiries to
+   Instagram. Case sizes, trade pricing, shelf life and lead times still need
+   to be confirmed before adding specific trade terms.
 9. **Stockists are deliberately honest.** Vizinha, Ericeira. Do not add shops
    until they are actually selling it.

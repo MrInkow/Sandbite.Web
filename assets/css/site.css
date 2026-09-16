@@ -339,8 +339,7 @@ table { border-collapse: collapse; width: 100%; }
 }
 .hero--split .hero__body { justify-content: center; }
 
-/* One line, sized to fit the column it sits in */
-.hero__title--line { font-size: clamp(25px, 3.35vw, 52px); text-wrap: nowrap; }
+
 
 .hero__body {
   padding: clamp(30px, 4vw, 58px) var(--pad-x) clamp(36px, 4.6vw, 66px);
@@ -564,6 +563,7 @@ body.has-mobile-buy .mobile-buy-bar {
   background: var(--asphalt); color: var(--canvas);
   border-top: 3px solid var(--flavour); padding: 10px 14px;
 }
+body.has-mobile-buy.is-ordering .mobile-buy-bar { display: none; }
 .mobile-buy-bar__info { display: flex; flex-direction: column; line-height: 1.15; }
 .mobile-buy-bar__info strong { font-family: var(--f-display); font-weight: 400; text-transform: uppercase; font-size: 17px; line-height: 1.15; }
 .mobile-buy-bar__info span { font-family: var(--f-mono); font-size: 10.5px; letter-spacing: .13em; color: var(--muted-dark); }
@@ -608,42 +608,6 @@ body.has-mobile-buy .mobile-buy-bar {
   display: flex; flex-wrap: wrap; gap: 7px 26px; justify-content: space-between;
   font-family: var(--f-mono); font-size: 10px; letter-spacing: .13em; text-transform: uppercase;
 }
-
-/* =========================================================================
-   CONTEXTUAL COLOUR — deliberately last.
-
-   A band decides what its own text does. These rules sit at the end of the
-   stylesheet on purpose: component defaults like `.on-dark .shot__id` carry
-   the same specificity, so position is what makes the band authoritative.
-   Putting a band override anywhere above here silently loses.
-   ========================================================================= */
-.band--blue .eyebrow, .split--blue .eyebrow,
-.band--blue .callout__tag, .split--blue .callout__tag,
-.band--blue .stamp-badge, .split--blue .stamp-badge { color: var(--muted-blue); }
-.band--flavour .eyebrow, .split--flavour .eyebrow,
-.split--flavour .offer-line i,
-.band--flavour .callout__tag, .split--flavour .callout__tag,
-.band--flavour .stamp-badge, .split--flavour .stamp-badge { color: var(--asphalt); }
-.band--ink .eyebrow, .split--ink .eyebrow,
-.band--ink .callout__tag, .split--ink .callout__tag,
-.band--ink .stamp-badge, .split--ink .stamp-badge { color: var(--flavour-lift); }
-.split--blue .muted, .band--blue .muted { color: var(--muted-blue); }
-.split--flavour .muted, .band--flavour .muted { color: #4A2810; }  /* 4.9:1 on flavour-pale */
-.split--ink .muted { color: var(--muted-dark); }
-.band--blue .shot__id, .split--blue .shot__id,
-.band--blue .ritual-mini__step span, .split--blue .ritual-mini__step span,
-.band--blue .ritual__copy, .split--blue .ritual__copy { color: var(--muted-blue); }
-.band--blue .row-item__n, .split--blue .row-item__n,
-.band--flavour .row-item__n, .split--flavour .row-item__n { color: var(--canvas); }
-.band--ink .row-item__n, .split--ink .row-item__n { color: var(--flavour-lift); }
-.band--ink .callout, .split--ink .callout { border-color: var(--flavour-lift); }
-.band--flavour .callout, .split--flavour .callout { border-color: var(--asphalt); }
-.band--blue .callout, .split--blue .callout { border-color: var(--muted-blue); }
-
-.band--blue .tbc, .split--blue .tbc { color: var(--canvas); border-color: var(--muted-blue); }
-.band--ink .tbc, .split--ink .tbc, .on-dark .tbc { color: var(--canvas); border-color: var(--flavour-lift); }
-.band--flavour .tbc, .split--flavour .tbc { color: var(--asphalt); border-color: var(--asphalt); }
-
 
 /* ---------- Reveal (progressive enhancement only) ---------- */
 .js-reveal [data-reveal] { opacity: 0; transform: translateY(12px); transition: opacity .45s ease, transform .45s ease; }
@@ -729,3 +693,98 @@ body.has-mobile-buy .mobile-buy-bar {
   .page { border: 0; }
   .band, .split { break-inside: avoid; }
 }
+
+/* Final content hierarchy: monochrome foundation, blue support, Coffee accent. */
+:root { --pad-y: clamp(44px, 5.5vw, 80px); }
+.eyebrow { color: var(--chore); font-size: 12px; letter-spacing: .14em; }
+.eyebrow--dark, .site-footer .eyebrow { color: var(--canvas); }
+.hero__title em { color: inherit; }
+.hero__title--product { font-size: clamp(38px, 4.7vw, 72px); line-height: 1.1; text-wrap: initial; letter-spacing: -.015em; }
+.hero__title--product span { display: block; }
+.hero__body { gap: 23px; }
+.hero__meta { font-size: 12px; letter-spacing: .06em; }
+.hero__meta b { color: var(--asphalt); }
+.hero__sub { color: var(--asphalt-soft); }
+.offer-line i { color: currentColor; opacity: .45; }
+.offer-line__note { font-family: var(--f-body); font-size: 14px; font-weight: 400; text-transform: none; letter-spacing: 0; color: var(--muted); }
+.btn--fill { background: var(--asphalt); border-color: var(--asphalt); color: var(--paper); }
+.btn--fill:hover, .btn--ink:hover { background: var(--chore-deep); border-color: var(--chore-deep); color: var(--paper); }
+.on-dark .btn--fill { background: var(--canvas); color: var(--asphalt); border-color: var(--canvas); }
+.on-dark .btn--fill:hover { background: var(--paper); border-color: var(--paper); }
+.nav a:hover, .nav a[aria-current] { border-bottom-color: var(--chore); }
+.ritual__icon, .ritual-mini__step svg { color: var(--chore); }
+.shot::before, .shot::after { border-color: var(--chore); }
+.shot__id { color: var(--chore); }
+.on-dark .shot::before, .on-dark .shot::after { border-color: var(--muted-blue); }
+.on-dark .shot__id { color: var(--muted-blue); }
+.flavour-label { padding: 6px 10px; border-left: 4px solid var(--flavour); color: var(--asphalt); }
+.split--blue .flavour-label { border-color: var(--flavour-pale); color: var(--canvas); }
+.belief-note { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px 30px; padding: 28px var(--pad-x); border-bottom: 2px solid var(--asphalt); }
+.belief-note p { max-width: 54ch; font-size: 17px; }
+.belief-note a { font-family: var(--f-ui); font-weight: 700; border-bottom: 1px solid currentColor; }
+.product-details .band__inner { max-width: 960px; }
+.product-details h2 { margin: 14px 0 30px; }
+.details-list { border-top: 2px solid var(--asphalt); }
+.details-list details { border-bottom: 1px solid var(--hair); }
+.details-list summary { cursor: pointer; padding: 20px 34px 20px 0; font-family: var(--f-ui); font-weight: 700; font-size: 20px; position: relative; list-style: none; }
+.details-list summary::-webkit-details-marker { display: none; }
+.details-list summary::after { content: '+'; position: absolute; right: 4px; top: 16px; font-size: 26px; font-weight: 400; }
+.details-list details[open] summary::after { content: '−'; }
+.details-copy { max-width: 68ch; padding-bottom: 23px; }
+.details-copy p + p { margin-top: 12px; }
+.story-rows .row-item { grid-template-columns: 1fr 1.3fr; gap: 35px; }
+.story-rows .row-item__p { grid-column: auto; }
+.story-close .band__inner { display: flex; flex-direction: column; align-items: flex-start; gap: 24px; }
+@media (max-width: 880px) {
+  .hero--split .hero__media { aspect-ratio: 16 / 9; }
+  .hero__title--product { font-size: clamp(38px, 8vw, 62px); }
+  .hero__body { gap: 19px; }
+}
+@media (max-width: 620px) {
+  .hero--split .hero__body { padding-block: 27px 32px; }
+  .hero__title--product { font-size: clamp(36px, 9vw, 50px); }
+  .hero__body .btn-row { width: 100%; }
+  .hero__body .btn--lg { padding: 16px 19px; font-size: 17px; }
+  .hero__body .btn--outline { background: transparent; border-color: transparent; text-decoration: underline; padding-inline: 0; }
+  .hero__body .btn--outline:hover { color: var(--chore); }
+  .ritual__copy, .ritual-mini__step span { font-size: 14px; }
+  .break-cell .shot { aspect-ratio: 3 / 2; min-height: 180px; }
+  .story-rows .row-item { grid-template-columns: 1fr; gap: 12px; }
+}
+
+/* =========================================================================
+   CONTEXTUAL COLOUR — deliberately last.
+
+   A band decides what its own text does. These rules sit at the end of the
+   stylesheet on purpose: component defaults like `.on-dark .shot__id` carry
+   the same specificity, so position is what makes the band authoritative.
+   Putting a band override anywhere above here silently loses.
+   ========================================================================= */
+.band--blue .eyebrow, .split--blue .eyebrow,
+.band--blue .callout__tag, .split--blue .callout__tag,
+.band--blue .stamp-badge, .split--blue .stamp-badge { color: var(--muted-blue); }
+.band--flavour .eyebrow, .split--flavour .eyebrow,
+.split--flavour .offer-line i,
+.band--flavour .callout__tag, .split--flavour .callout__tag,
+.band--flavour .stamp-badge, .split--flavour .stamp-badge { color: var(--asphalt); }
+.band--ink .eyebrow, .split--ink .eyebrow,
+.band--ink .callout__tag, .split--ink .callout__tag,
+.band--ink .stamp-badge, .split--ink .stamp-badge { color: var(--flavour-lift); }
+.split--blue .muted, .band--blue .muted { color: var(--muted-blue); }
+.split--flavour .muted, .band--flavour .muted { color: #4A2810; }  /* 4.9:1 on flavour-pale */
+.split--ink .muted { color: var(--muted-dark); }
+.band--blue .shot__id, .split--blue .shot__id,
+.band--blue .ritual-mini__step span, .split--blue .ritual-mini__step span,
+.band--blue .ritual__copy, .split--blue .ritual__copy { color: var(--muted-blue); }
+.band--blue .row-item__n, .split--blue .row-item__n,
+.band--flavour .row-item__n, .split--flavour .row-item__n { color: var(--canvas); }
+.band--ink .row-item__n, .split--ink .row-item__n { color: var(--flavour-lift); }
+.band--ink .callout, .split--ink .callout { border-color: var(--flavour-lift); }
+.band--flavour .callout, .split--flavour .callout { border-color: var(--asphalt); }
+.band--blue .callout, .split--blue .callout { border-color: var(--muted-blue); }
+
+.band--blue .tbc, .split--blue .tbc { color: var(--canvas); border-color: var(--muted-blue); }
+.band--ink .tbc, .split--ink .tbc, .on-dark .tbc { color: var(--canvas); border-color: var(--flavour-lift); }
+.band--flavour .tbc, .split--flavour .tbc { color: var(--asphalt); border-color: var(--asphalt); }
+.on-dark .ritual__icon, .on-dark .ritual-mini__step svg { color: var(--canvas); }
+.split--flavour .flavour-label { border-left-color: var(--asphalt); }
