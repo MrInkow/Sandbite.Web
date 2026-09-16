@@ -44,7 +44,7 @@
   }
 
   /* ---- Order panel state ---- */
-  var orderPanel = document.getElementById('order-form');
+  var orderPanel = document.getElementById('buy');
 
   if (orderPanel && 'IntersectionObserver' in window) {
     var orderObserver = new IntersectionObserver(function (entries) {
@@ -58,8 +58,7 @@
   /* ---- Stripe Payment Link hydration ---- */
   var checkoutConfig = window.SANDBITE_CHECKOUT || {};
   var checkoutLinks = {
-    'kona-box': checkoutConfig.konaBox,
-    'kona-single': checkoutConfig.konaSingle
+    'coffee-bag3': checkoutConfig.coffeeBag3
   };
   var checkoutKeys = Object.keys(checkoutLinks);
   var liveCheckoutCount = 0;
