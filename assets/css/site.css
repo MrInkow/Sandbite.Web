@@ -361,27 +361,6 @@ table { border-collapse: collapse; width: 100%; }
 }
 .hero__meta b { color: var(--flavour-deep); font-weight: 500; }
 
-/* ---------- Shout: a compact interruption, not a whole section ---------- */
-.shout {
-  background: var(--asphalt); color: var(--canvas);
-  border-bottom: var(--rule) solid var(--asphalt);
-  padding: clamp(22px, 2.8vw, 36px) var(--pad-x);
-}
-.shout__inner {
-  max-width: 1340px; margin-inline: auto;
-  display: flex; flex-wrap: wrap; align-items: baseline;
-  gap: clamp(10px, 2vw, 30px);
-}
-.shout h2 { flex: 1 1 360px; min-width: 0; font-size: clamp(23px, 3.2vw, 42px); }
-/* size to the sentence, never shrink it: it drops to its own row rather
-   than breaking onto a second line beside the headline */
-.shout p {
-  flex: 0 0 auto;
-  max-width: 100%;
-  font-size: 15.5px;
-  line-height: 1.45;
-}
-
 /* ---------- Offer line ---------- */
 .offer-line {
   font-family: var(--f-ui); font-weight: 700;
@@ -631,7 +610,6 @@ body.has-mobile-buy.is-ordering .mobile-buy-bar { display: none; }
     border-bottom: var(--rule) solid var(--asphalt);
     aspect-ratio: 4 / 3;
   }
-  .hero__title--line { text-wrap: balance; }
   .order-band { grid-template-columns: 1fr; }
   .order-band__side { border-left: 0; border-top: var(--rule) solid var(--asphalt); }
 
