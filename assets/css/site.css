@@ -260,6 +260,24 @@ table { border-collapse: collapse; width: 100%; }
 .btn--sm { font-size: 13px; padding: 9px 14px; }
 .btn-row { display: flex; flex-wrap: wrap; gap: 12px; }
 
+/* ---------- PHOTO ----------
+   A real photograph in a slot. The image always fills its slot and crops
+   with object-fit, so one file serves every breakpoint and the band's
+   1px rules still line up. .shot below is the unshot-yet placeholder. */
+.photo {
+  position: relative; overflow: hidden;
+  display: block; margin: 0; min-height: 180px;
+  background: rgba(27, 28, 26, .06);
+}
+.photo img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.photo--ratio-45  { aspect-ratio: 4 / 5; }
+.photo--ratio-11  { aspect-ratio: 1 / 1; }
+.photo--ratio-32  { aspect-ratio: 3 / 2; }
+.photo--ratio-169 { aspect-ratio: 16 / 9; }
+.on-dark .photo, .band--ink .photo, .band--blue .photo, .band--flavour .photo {
+  background: rgba(0, 0, 0, .2);
+}
+
 /* ---------- PHOTO PLACEHOLDER ---------- */
 .shot {
   position: relative;
@@ -328,7 +346,8 @@ table { border-collapse: collapse; width: 100%; }
   overflow: hidden;
 }
 .hero__media > * { flex: 1; min-width: 0; }
-.hero__media .shot { border: 0; min-height: 0; }
+.hero__media .photo, .split__media .photo, .break-cell .photo, .ritual__step .photo { aspect-ratio: auto; }
+.hero__media .shot, .hero__media .photo { border: 0; min-height: 0; }
 .hero__media img { width: 100%; height: 100%; object-fit: cover; }
 
 .hero--split { display: grid; grid-template-columns: 1.02fr .98fr; align-items: stretch; }
@@ -386,7 +405,7 @@ table { border-collapse: collapse; width: 100%; }
 }
 .break-cell { border-right: 1px solid var(--asphalt); display: flex; flex-direction: column; }
 .break-cell:last-child { border-right: 0; }
-.break-cell .shot { border: 0; border-bottom: 1px solid var(--asphalt); min-height: 210px; }
+.break-cell .shot, .break-cell .photo { border: 0; border-bottom: 1px solid var(--asphalt); min-height: 210px; }
 .break-cell__cap { padding: 15px 16px 19px; display: flex; flex-direction: column; gap: 7px; }
 .break-cell__cap h3 { font-size: clamp(18px, 2vw, 23px); }
 .break-cell__cap p { font-size: 14.5px; line-height: 1.5; color: var(--muted); }
@@ -481,7 +500,7 @@ table { border-collapse: collapse; width: 100%; }
 .ritual__icon svg { width: 100%; height: 100%; }
 .ritual__n { font-family: var(--f-mono); font-size: 10px; letter-spacing: .18em; opacity: .6; display: block; }
 .ritual__name { font-family: var(--f-display); font-weight: 400; text-transform: uppercase; font-size: clamp(21px, 2.2vw, 28px); line-height: 1.08; }
-.ritual__step .shot { border: 0; border-top: 1px solid currentColor; min-height: 140px; }
+.ritual__step .shot, .ritual__step .photo { border: 0; border-top: 1px solid currentColor; min-height: 140px; }
 .ritual__copy { padding: 13px 15px 16px; font-size: 14px; line-height: 1.45; border-top: 1px solid currentColor; }
 
 /* ---------- Spec strip ---------- */
@@ -558,7 +577,7 @@ body.has-mobile-buy.is-ordering .mobile-buy-bar { display: none; }
 .split__media { border-left: var(--rule) solid var(--asphalt); display: flex; position: relative; }
 .split--ink .split__media, .split--blue .split__media { border-left-color: var(--canvas); }
 .split--flavour .split__media { border-left-color: var(--asphalt); }
-.split__media .shot { border: 0; flex: 1; min-height: 320px; }
+.split__media .shot, .split__media .photo { border: 0; flex: 1; min-height: 320px; }
 .split__media img { width: 100%; height: 100%; object-fit: cover; }
 
 /* ---------- Photo strip ---------- */
@@ -726,7 +745,7 @@ body.has-mobile-buy.is-ordering .mobile-buy-bar { display: none; }
   .hero__body .btn--outline { background: transparent; border-color: transparent; text-decoration: underline; padding-inline: 0; }
   .hero__body .btn--outline:hover { color: var(--chore); }
   .ritual__copy, .ritual-mini__step span { font-size: 14px; }
-  .break-cell .shot { aspect-ratio: 3 / 2; min-height: 180px; }
+  .break-cell .shot, .break-cell .photo { aspect-ratio: 3 / 2; min-height: 180px; }
   .story-rows .row-item { grid-template-columns: 1fr; gap: 12px; }
 }
 

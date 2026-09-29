@@ -10,9 +10,10 @@ crumble with a squeeze-on jam**, not an energy bar. Flavour 01 is **Coffee**.
 Places inspire flavours but do not own the brand, so the island material lives
 on the story page only.
 
-Product and break photographs are currently **placeholders that brief each shot
-they are waiting for**; the Story page retains its existing documentary images — shot ID, what it has to show, aspect ratio and lighting.
-Search the HTML for `class="shot"` to find them all.
+The **homepage is fully photographed** — hero, the four format steps, the
+Coffee panel and the three break cells all carry real images. The Coffee
+and Contact pages still use placeholders that brief the shot they are
+waiting for; search for `class="shot"` to find them.
 
 ## Files
 
@@ -99,17 +100,29 @@ panels. It has to survive a photocopier.
 
 ## Photography
 
-The placeholders name the shots. Priority order:
+`assets/img/` holds the shot images, named for what they show. Each sits in
+a `.photo` figure and fills its slot with `object-fit: cover`, so one file
+serves every breakpoint and the band rules still line up.
 
-1. **Tier B (B1–B4)** — tear, push, squeeze, bite. Four frames, tripod locked,
-   identical framing and light. Without these there is no format section, and
-   the format is the product's whole difference. These block the build.
-2. **Tier D (D1–D4)** — the box of 3 on an asphalt ground under hard
-   directional light. Replaces the deleted pack renders.
-3. **Tier A (A1–A3)** — hands, jam, crumbs, mess. 80% of the site's imagery
-   should be this.
-4. **Tier C (C1, C4, C7)** — the break: tailgate, site at lunch, kitchen
-   mid-batch. Documentary, available light.
+| File | Slot |
+| --- | --- |
+| `hero-pack-beans.jpg` | Home hero |
+| `step-tear.jpg` | Format step 01 |
+| `step-push.jpg` | Format step 02 |
+| `step-squeeze.jpg` | Format step 03 |
+| `step-bite.jpg` | Format step 04 |
+| `coffee-jar-pack.jpg` | Coffee panel |
+| `break-on-the-job.jpg` | The break, cell 1 |
+| `break-out-for-the-day.jpg` | The break, cell 2 |
+| `break-just-a-tuesday.jpg` | The break, cell 3 |
+
+Sources are cropped to the slot ratio and resized before committing —
+1200px wide for the two large slots, 800–900px for the rest, JPEG quality
+82, progressive. The set totals about 1 MB; the hero is the heaviest at
+~300 KB and is the one to revisit first if the page needs to get lighter.
+
+Still to shoot: the Coffee page product hero and proof shot, and the
+Contact page kitchen shot.
 
 Deliberately absent, per the brand document: beige wellness minimalism,
 AI-generated food, perfectly placed crumbs, fake vintage grain, hard hats as
