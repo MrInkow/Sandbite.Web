@@ -114,7 +114,7 @@ serves every breakpoint and the band rules still line up.
 | `break-on-the-job.jpg` | The break, cell 1 |
 | `break-out-for-the-day.jpg` | The break, cell 2 |
 | `break-just-a-tuesday.jpg` | The break, cell 3 |
-| `coffee-hero-tray.jpg` | Products hero |
+| `coffee-hero-squeeze.jpg` | Products hero |
 | `coffee-ingredients.jpg` | Products, "an early taste" |
 
 Sources are cropped to the slot ratio and resized before committing —
