@@ -717,7 +717,9 @@ body.has-mobile-buy.is-ordering .mobile-buy-bar { display: none; }
 .flavour-label { padding: 6px 10px; border-left: 4px solid var(--flavour); color: var(--asphalt); }
 .split--blue .flavour-label { border-color: var(--flavour-pale); color: var(--canvas); }
 .belief-note { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px 30px; padding: 28px var(--pad-x); border-bottom: 2px solid var(--asphalt); }
-.belief-note p { max-width: 54ch; font-size: 17px; }
+/* sizes to its sentence: holds one line while there is room, and drops to
+   its own row rather than breaking in half beside the link */
+.belief-note p { flex: 0 0 auto; max-width: 100%; font-size: 17px; }
 .belief-note a { font-family: var(--f-ui); font-weight: 700; border-bottom: 1px solid currentColor; }
 .product-details .band__inner { max-width: 960px; }
 .product-details h2 { margin: 14px 0 30px; }
