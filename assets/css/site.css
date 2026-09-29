@@ -277,6 +277,11 @@ table { border-collapse: collapse; width: 100%; }
 .on-dark .photo, .band--ink .photo, .band--blue .photo, .band--flavour .photo {
   background: rgba(0, 0, 0, .2);
 }
+/* When a narrow viewport re-crops a tall photo to a landscape slot, cover
+   takes the middle. This pulls the crop down to the part worth seeing. */
+@media (max-width: 620px) {
+  .photo--focus-low img { object-position: center 82%; }
+}
 
 /* ---------- PHOTO PLACEHOLDER ---------- */
 .shot {

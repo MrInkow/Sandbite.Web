@@ -10,10 +10,9 @@ crumble with a squeeze-on jam**, not an energy bar. Flavour 01 is **Coffee**.
 Places inspire flavours but do not own the brand, so the island material lives
 on the story page only.
 
-The **homepage is fully photographed** — hero, the four format steps, the
-Coffee panel and the three break cells all carry real images. The Coffee
-and Contact pages still use placeholders that brief the shot they are
-waiting for; search for `class="shot"` to find them.
+The **homepage and the Products page are fully photographed**. Contact is
+the last page still using placeholders that brief the shot they are waiting
+for; search for `class="shot"` to find them.
 
 ## Files
 
@@ -115,14 +114,19 @@ serves every breakpoint and the band rules still line up.
 | `break-on-the-job.jpg` | The break, cell 1 |
 | `break-out-for-the-day.jpg` | The break, cell 2 |
 | `break-just-a-tuesday.jpg` | The break, cell 3 |
+| `coffee-hero-tray.jpg` | Products hero |
+| `coffee-ingredients.jpg` | Products, "an early taste" |
 
 Sources are cropped to the slot ratio and resized before committing —
 1200px wide for the two large slots, 800–900px for the rest, JPEG quality
 82, progressive. The set totals about 1 MB; the hero is the heaviest at
 ~300 KB and is the one to revisit first if the page needs to get lighter.
 
-Still to shoot: the Coffee page product hero and proof shot, and the
-Contact page kitchen shot.
+`.photo--focus-low` pulls a crop's focus down to 82% on phones. Narrow
+viewports re-crop the tall break cells to landscape, and cover otherwise
+takes the middle of the frame, which is not always the part worth seeing.
+
+Still to shoot: the Contact page kitchen shot.
 
 Deliberately absent, per the brand document: beige wellness minimalism,
 AI-generated food, perfectly placed crumbs, fake vintage grain, hard hats as
